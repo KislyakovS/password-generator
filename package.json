@@ -1,0 +1,16 @@
+{
+  "name": "password-generator",
+  "version": "1.0.0",
+  "description": "React password generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "password",
+    "generator",
+    "password generator"
+  ],
+  "author": "Alexandr Kislyakov",
+  "license": "ISC"
+}
