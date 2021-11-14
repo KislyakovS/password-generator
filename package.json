@@ -2,13 +2,15 @@
   "name": "password-generator",
   "version": "1.0.0",
   "description": "React password generator",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "prettier": "prettier-eslint --list-different $PWD/'src/**/*.{ts,tsx}'; prettier-eslint --write $PWD/'src/**/*.{ts,tsx}'"
   },
   "keywords": [
     "password",
@@ -24,10 +26,14 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/eslint-plugin": "^11.5.0",
     "@parcel/cache": "^2.0.1",
     "@parcel/workers": "^2.0.1",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
-    "parcel": "^2.0.1"
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "eslint-config-airbnb": "^19.0.0",
+    "parcel": "^2.0.1",
+    "prettier-eslint-cli": "^5.0.1"
   }
 }
