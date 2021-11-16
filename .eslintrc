@@ -15,7 +15,7 @@
     }
   },
   "rules": {
-    "allowForLoopAfterthoughts": true,
+    "no-plusplus": 0,
     "react/function-component-definition": 0,
     "react/jsx-filename-extension": [
       2,
