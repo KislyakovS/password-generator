@@ -19,10 +19,18 @@ describe('When using the password generator, it:', () => {
     expect(password.generate().length).toBe(LENGTH_PASSWORD);
   });
 
-  it('should throw an error', () => {
+  it('should give an error when transmitting zero length', () => {
     const LENGTH_PASSWORD = 0;
 
     password.setup({ length: LENGTH_PASSWORD });
+
+    expect(password.generate).toThrowError();
+  });
+
+  it('should give an error if there are no options', () => {
+    password.setup({
+      isNumber: false, isSymbol: false, isUppercase: false, isLowercase: false,
+    });
 
     expect(password.generate).toThrowError();
   });
