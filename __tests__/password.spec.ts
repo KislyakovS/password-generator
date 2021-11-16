@@ -8,7 +8,7 @@ describe('When using the password generator, it:', () => {
   });
 
   it('should generate a password of default length 12', () => {
-    expect(password.generate()?.length).toBe(12);
+    expect(password.generate().length).toBe(12);
   });
 
   it('should set a password length of 20', () => {
@@ -16,6 +16,14 @@ describe('When using the password generator, it:', () => {
 
     password.setup({ length: LENGTH_PASSWORD });
 
-    expect(password.generate()?.length).toBe(LENGTH_PASSWORD);
+    expect(password.generate().length).toBe(LENGTH_PASSWORD);
+  });
+
+  it('should throw an error', () => {
+    const LENGTH_PASSWORD = 0;
+
+    password.setup({ length: LENGTH_PASSWORD });
+
+    expect(password.generate).toThrowError();
   });
 });

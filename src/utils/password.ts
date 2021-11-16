@@ -66,7 +66,7 @@ class Password {
     const { length } = this.options;
 
     if (!length) {
-      return null;
+      throw new Error(`password length cannot be ${length}`);
     }
 
     const pool = this.getPool();
