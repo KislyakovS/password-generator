@@ -1,4 +1,4 @@
-import { Password } from '../utils/password';
+import { Password } from '../src/utils/password';
 
 describe('When using the password generator, it:', () => {
   let password = new Password();
