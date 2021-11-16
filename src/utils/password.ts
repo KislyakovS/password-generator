@@ -1,6 +1,7 @@
 import { randomNumber } from './random-number';
 
 type OptionsType = {
+  [key: string]: boolean | number | undefined,
   length?: number,
   isNumber?: boolean,
   isSymbol?: boolean,
@@ -8,12 +9,17 @@ type OptionsType = {
   isLowercase?: boolean,
 };
 
+type StrictRuleType = {
+  name: string, regex: RegExp,
+}
+
 const defaultOptions = Object.freeze({
   length: 12,
   isNumber: true,
   isSymbol: true,
   isUppercase: false,
   isLowercase: true,
+  isStrict: false,
 });
 
 const combinations = Object.freeze({
@@ -22,6 +28,13 @@ const combinations = Object.freeze({
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
 });
+
+const strictRules: StrictRuleType[] = [
+  { name: 'isNumber', regex: /[0-9]/ },
+  { name: 'isSymbol', regex: /[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]/ },
+  { name: 'isUppercase', regex: /[A-Z]/ },
+  { name: 'isLowercase', regex: /[a-z]/ },
+];
 
 class Password {
   private options: OptionsType;
@@ -52,7 +65,25 @@ class Password {
       pool += combinations.lowercase;
     }
 
+    if (!pool) {
+      throw new Error('there are no configuration fields, use the method "setup"');
+    }
+
     return pool;
+  }
+
+  private checkingStrict(password: string): boolean {
+    const isStrict = strictRules.every((rule) => {
+      const { name, regex } = rule;
+
+      if (!this.options[name]) {
+        return true;
+      }
+
+      return regex.test(password);
+    });
+
+    return isStrict;
   }
 
   public setup(options: OptionsType) {
@@ -62,8 +93,8 @@ class Password {
     };
   }
 
-  public generate() {
-    const { length } = this.options;
+  public generate(): string {
+    const { length, isStrict } = this.options;
 
     if (!length) {
       throw new Error(`password length cannot be ${length}`);
@@ -74,6 +105,10 @@ class Password {
     let password = '';
     for (let _ = 0; _ < length; _++) {
       password += pool[randomNumber(0, pool.length - 1)];
+    }
+
+    if (isStrict && !this.checkingStrict(password)) {
+      return this.generate();
     }
 
     return password;
