@@ -36,7 +36,7 @@ describe('When using the password generator, it:', () => {
   it('should password must be generated from symbol only', () => {
     password.setup({ isNumber: false, isSymbol: true, isUppercase: false, isLowercase: false });
 
-    expect(password.generate()).toEqual(expect.stringMatching(/[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]+/));[[]]
+    expect(password.generate()).toEqual(expect.stringMatching(/[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]+/));
   })
 
   it('should password must be generated from uppercase only', () => {
