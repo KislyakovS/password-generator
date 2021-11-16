@@ -73,7 +73,7 @@ class Password {
 
     let password = '';
     for (let _ = 0; _ < length; _++) {
-      password += pool[randomNumber(0, pool.length)];
+      password += pool[randomNumber(0, pool.length - 1)];
     }
 
     return password;
