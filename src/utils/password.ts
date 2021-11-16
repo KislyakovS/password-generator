@@ -63,17 +63,16 @@ class Password {
   }
 
   public generate() {
-    if (!this.options.length) {
+    const { length } = this.options;
+
+    if (!length) {
       return null;
     }
 
-    const { length } = this.options;
-
-    let password = '';
-
     const pool = this.getPool();
 
-    for (let i = 0; i < length; i++) {
+    let password = '';
+    for (let _ = 0; _ < length; _++) {
       password += pool[randomNumber(0, pool.length)];
     }
 
