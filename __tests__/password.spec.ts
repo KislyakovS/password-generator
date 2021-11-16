@@ -28,26 +28,47 @@ describe('When using the password generator, it:', () => {
   });
 
   it('should password must be generated from numbers only', () => {
-    password.setup({ isNumber: true, isSymbol: false, isUppercase: false, isLowercase: false });
+    password.setup({
+      isNumber: true, isSymbol: false, isUppercase: false, isLowercase: false,
+    });
 
-    expect(password.generate()).toEqual(expect.stringMatching(/[0-9]+/));[[]]
-  })
+    expect(password.generate()).toEqual(expect.stringMatching(/[0-9]+/));
+  });
 
   it('should password must be generated from symbol only', () => {
-    password.setup({ isNumber: false, isSymbol: true, isUppercase: false, isLowercase: false });
+    password.setup({
+      isNumber: false, isSymbol: true, isUppercase: false, isLowercase: false,
+    });
 
     expect(password.generate()).toEqual(expect.stringMatching(/[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]+/));
-  })
+  });
 
   it('should password must be generated from uppercase only', () => {
-    password.setup({ isNumber: false, isSymbol: false, isUppercase: true, isLowercase: false });
+    password.setup({
+      isNumber: false, isSymbol: false, isUppercase: true, isLowercase: false,
+    });
 
     expect(password.generate()).toEqual(expect.stringMatching(/[A-Z]+/));
-  })
+  });
 
   it('should password must be generated from lowercase only', () => {
-    password.setup({ isNumber: false, isSymbol: false, isUppercase: false, isLowercase: true });
+    password.setup({
+      isNumber: false, isSymbol: false, isUppercase: false, isLowercase: true,
+    });
 
     expect(password.generate()).toEqual(expect.stringMatching(/[a-z]+/));
-  })
+  });
+
+  it('matches even if received contains additional elements', () => {
+    password.setup({
+      isNumber: true, isSymbol: true, isUppercase: true, isLowercase: true, isStrict: true,
+    });
+
+    const passwordStr = password.generate();
+
+    expect(passwordStr).toMatch(/[0-9]/);
+    expect(passwordStr).toMatch(/[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]/);
+    expect(passwordStr).toMatch(/[A-Z]/);
+    expect(passwordStr).toMatch(/[a-z]/);
+  });
 });
