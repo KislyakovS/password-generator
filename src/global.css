@@ -1,0 +1,26 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --white-color: #fff;
+
+  /* font */
+  --font-family: 'Lato', sans-serif;
+
+  /* box */
+  --container-padding: 20px;
+  --container-border-radius: 20px;
+  --container-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+html,
+body {
+  padding: 0px;
+  margin: 0px;
+
+  font-family: var(--font-family);
+}

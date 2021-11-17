@@ -25,6 +25,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.16.0",
     "@parcel/cache": "^2.0.1",
+    "@parcel/transformer-svg-react": "^2.0.1",
     "@parcel/workers": "^2.0.1",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
