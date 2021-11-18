@@ -11,7 +11,7 @@ import * as classes from './input-password.module.css';
 
 const InputPassword: FC = () => {
   return (
-    <div className={classes.container}>
+    <div className={`container ${classes.container}`}>
       <div className={classes.lock}>
         <LockOpenIcon />
       </div>
