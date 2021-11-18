@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import { Range as Input } from 'react-range';
 
-//
+// Components
 import { track } from './track';
 import { Thumb } from './thumb';
 
