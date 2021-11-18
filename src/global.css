@@ -7,6 +7,9 @@
 :root {
   /* colors */
   --white-color: #fff;
+  --red-color: #d22d27;
+
+  --primary-color: var(--red-color);
 
   /* font */
   --font-family: 'Lato', sans-serif;
@@ -23,4 +26,12 @@ body {
   margin: 0px;
 
   font-family: var(--font-family);
+}
+
+.container {
+  padding: var(--container-padding);
+
+  border-radius: var(--container-border-radius);
+  background-color: var(--white-color);
+  box-shadow: var(--container-box-shadow);
 }
