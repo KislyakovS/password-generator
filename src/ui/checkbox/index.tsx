@@ -16,7 +16,7 @@ type CheckboxType = DefaultElement & {
 
 const Checkbox: FC<CheckboxType> = ({ className, checked, children, ...props }: CheckboxType) => {
   return (
-    <label className={`${className} ${classes.checkbox}`}>
+    <label className={`${classes.checkbox} ${className ? className : ''}`}>
       <input className={classes.input} {...props} type="checkbox" checked={checked} />
       <span className={classes.box}>
         {checked && <CheckIcon />}
