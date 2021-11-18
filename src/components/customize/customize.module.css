@@ -1,0 +1,18 @@
+.title {
+  margin: 0px 0px 25px 0px;
+
+  font-size: 30px;
+  line-height: 1.5;
+
+  border-bottom: 2px solid #edeef0;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+}
+
+.checkbox:not(:last-child) {
+  margin-bottom: 15px
+}
