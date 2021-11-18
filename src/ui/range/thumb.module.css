@@ -1,0 +1,14 @@
+.slider {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
+  outline: none;
+}
+
+.slider:hover,
+.slider:focus {
+  box-shadow: 0 0 6px 0 var(--primary-color);
+}
