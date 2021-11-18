@@ -17,7 +17,7 @@ export type RangeType = {
 }
 
 const Range: FC<RangeType> = ({ className, step = 1, min, max, value, onChange }: RangeType) => {
-  return <div className={className}>
+  return <div className={className ? className : ''}>
     <Input
       values={[value]}
       step={step}
