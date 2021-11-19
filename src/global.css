@@ -16,7 +16,7 @@
 
   /* box */
   --container-padding: 20px;
-  --container-border-radius: 20px;
+  --container-border-radius: 10px;
   --container-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -26,6 +26,10 @@ body {
   margin: 0px;
 
   font-family: var(--font-family);
+}
+
+#app {
+  padding: 50px 100px;
 }
 
 .container {

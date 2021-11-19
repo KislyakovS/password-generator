@@ -1,3 +1,11 @@
-const App = () => <h1>Hello world</h1>;
+import { InputPassword } from './components/input-password';
+import { Customize } from './components/customize';
+
+const App = () => (
+  <>
+    <InputPassword />
+    <Customize />
+  </>
+);
 
 export { App };

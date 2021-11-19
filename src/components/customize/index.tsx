@@ -10,7 +10,7 @@ import * as classes from './customize.module.css';
 
 const Customize: FC = () => {
   return (
-    <div className={`container ${classes.container}`}>
+    <div className={`container`}>
       <h3 className={classes.title}>Customize your password</h3>
       <form className={classes.form}>
         <Length />
