@@ -1,0 +1,32 @@
+.logo {
+  position: relative;
+
+  margin: 0px;
+  padding: 0px;
+
+  font-size: 20px;
+}
+
+.star {
+  position: absolute;
+  top: -2px;
+
+  font-size: 50px;
+  line-height: 50px;
+}
+
+.name {
+  display: block;
+  margin-left: 25px;
+}
+
+.slogan {
+  display: block;
+  margin-top: 3px;
+
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: normal;
+
+  opacity: .7;
+}
