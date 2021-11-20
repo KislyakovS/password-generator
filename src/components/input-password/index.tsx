@@ -8,15 +8,20 @@ import RefreshIcon from './icons/refresh.svg';
 // Instruments
 import * as classes from './input-password.module.css';
 
-const InputPassword: FC = () => {
+type InputPasswordType = {
+  password: string,
+  onUpdate: () => void,
+}
+
+const InputPassword: FC<InputPasswordType> = ({ password, onUpdate }) => {
   return (
     <div className={`container ${classes.container}`}>
-      <input className={classes.input} value="TpPG%Vhlk2*k" />
+      <input className={classes.input} value={password} readOnly />
       <div className={classes.actions}>
         <button>
           <CopyIcon />
         </button>
-        <button>
+        <button onClick={onUpdate}>
           <RefreshIcon />
         </button>
       </div>
