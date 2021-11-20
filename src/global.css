@@ -6,7 +6,8 @@
 
 :root {
   /* colors */
-  --black-color-1: #191D24;
+  --black-color-1: #191d24;
+  --black-color-2: #1f232b;
   --white-color: #fff;
   --red-color: #d22d27;
 
@@ -18,9 +19,9 @@
   --font-family: 'Lato', sans-serif;
 
   /* box */
-  --container-padding: 20px;
+  /* --container-padding: 20px;
   --container-border-radius: 10px;
-  --container-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --container-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 html,
@@ -41,10 +42,10 @@ body {
   padding: 25px;
 }
 
-.container {
+/* .container {
   padding: var(--container-padding);
 
   border-radius: var(--container-border-radius);
   background-color: var(--white-color);
   box-shadow: var(--container-box-shadow);
-}
+} */
