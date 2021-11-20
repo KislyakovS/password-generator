@@ -1,6 +1,6 @@
 import { randomNumber } from './random-number';
 
-type OptionsType = {
+export type OptionsType = {
   [key: string]: boolean | number | undefined,
   length?: number,
   isNumber?: boolean,
@@ -115,4 +115,4 @@ class Password {
   }
 }
 
-export { Password };
+export { defaultOptions, Password };
