@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  margin: 0px;
+  padding: 15px 30px;
+
+  font-size: 18px;
+  color: var(--white-color);
+
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+
+  cursor: pointer;
+  outline: none;
+  transition: all .4s;
+}
+
+.button:hover,
+.button:focus {
+  transform: scale(1.04);
+}
+
+.description {
+  display: block;
+  margin-top: 10px;
+
+  font-size: 14px;
+  text-align: center;
+
+  opacity: 0.2;
+}

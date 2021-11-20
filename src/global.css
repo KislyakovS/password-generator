@@ -9,19 +9,14 @@
   --black-color-1: #191d24;
   --black-color-2: #1f232b;
   --white-color: #fff;
-  --red-color: #d22d27;
+  --blue-color: #1e75d0;
 
-  /* --primary-color: var(--red-color); */
+  --primary-color: var(--blue-color);
   --text-color: var(--white-color);
   --body-background: var(--black-color-1);
 
   /* font */
   --font-family: 'Lato', sans-serif;
-
-  /* box */
-  /* --container-padding: 20px;
-  --container-border-radius: 10px;
-  --container-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
 }
 
 html,
