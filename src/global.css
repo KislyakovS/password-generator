@@ -6,10 +6,13 @@
 
 :root {
   /* colors */
+  --black-color-1: #191D24;
   --white-color: #fff;
   --red-color: #d22d27;
 
-  --primary-color: var(--red-color);
+  /* --primary-color: var(--red-color); */
+  --text-color: var(--white-color);
+  --body-background: var(--black-color-1);
 
   /* font */
   --font-family: 'Lato', sans-serif;
@@ -28,8 +31,14 @@ body {
   font-family: var(--font-family);
 }
 
+body {
+  color: var(--text-color);
+
+  background-color: var(--body-background);
+}
+
 #app {
-  padding: 50px 100px;
+  padding: 25px;
 }
 
 .container {
