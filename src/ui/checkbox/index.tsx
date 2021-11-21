@@ -9,14 +9,14 @@ import * as classes from './checkbox.module.css';
 
 // Types
 type DefaultElement = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
-type CheckboxType = DefaultElement & {
+type CheckboxPropsType = DefaultElement & {
   type?: never,
   children: ReactNode,
 }
 
-const Checkbox: FC<CheckboxType> = ({ className, checked, children, ...props }: CheckboxType) => {
+const Checkbox: FC<CheckboxPropsType> = ({ className, checked, children, ...props }) => {
   return (
-    <label className={`${classes.checkbox} ${className ? className : ''}`}>
+    <label className={`${classes.checkbox} ${className ? className : ''} ${checked ? classes.checked : ''}`}>
       <input className={classes.input} {...props} type="checkbox" checked={checked} />
       <span className={classes.box}>
         {checked && <CheckIcon />}
