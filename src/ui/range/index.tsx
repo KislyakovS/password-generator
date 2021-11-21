@@ -5,6 +5,7 @@ import { Range as Input } from 'react-range';
 // Components
 import { track } from './track';
 import { Thumb } from './thumb';
+import { mark } from './mark';
 
 // Types
 export type RangeType = {
@@ -13,10 +14,11 @@ export type RangeType = {
   step?: number,
   min: number,
   max: number,
+  marks: string[],
   onChange: (value: number) => void,
 }
 
-const Range: FC<RangeType> = ({ className, step = 1, min, max, value, onChange }: RangeType) => {
+const Range: FC<RangeType> = ({ className, step = 1, min, max, value, marks, onChange }: RangeType) => {
   return <div className={className ? className : ''}>
     <Input
       values={[value]}
@@ -25,6 +27,7 @@ const Range: FC<RangeType> = ({ className, step = 1, min, max, value, onChange }
       max={max}
       onChange={([value]) => onChange(value)}
       renderTrack={track(min, max, value)}
+      renderMark={mark(marks, value, step)}
       renderThumb={Thumb}
     />
   </div>

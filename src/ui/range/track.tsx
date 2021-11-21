@@ -26,7 +26,7 @@ const track = (min: number, max: number, value: number): FC<TrackType> => ({ pro
         style={{
           background: getTrackBackground({
             values: [value],
-            colors: ['#d22d27', '#eaeaea'],
+            colors: ['#1e75d0', '#353940'],
             min,
             max,
           })
