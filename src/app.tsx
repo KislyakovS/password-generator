@@ -1,6 +1,6 @@
 // Components
-import { InputPassword } from './components/input-password';
-import { Customize } from './components/customize';
+import { Logo } from './ui';
+import { FormGenerate, ListPassword } from './components';
 
 // Hooks
 import { useCustomize } from './bus/customize/hooks';
@@ -19,15 +19,11 @@ const App = () => {
 
   return (
     <>
-      <InputPassword password={password} onUpdate={generate} />
-      <Customize
-        options={options}
-        setLength={setLength}
-        setIsUppercase={setIsUppercase}
-        setIsLowercase={setIsLowercase}
-        setIsSymbol={setIsSymbol}
-        setIsNumber={setIsNumber}
-      />
+      <Logo />
+      <div className="container mt-80">
+        <FormGenerate />
+        <ListPassword />
+      </div>
     </>
   )
 }
