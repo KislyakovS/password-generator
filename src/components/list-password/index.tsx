@@ -21,7 +21,7 @@ const ListPassword: FC = observer(() => {
       {password.passwords.map(p => (
         <li key={p} className={classes.item}>
           <div className={classes.line}>
-            <span>{p}</span>
+            <span className={classes.password}>{p}</span>
             <button
               className={classes.button}
               onClick={() => navigator.clipboard.writeText(p)}
