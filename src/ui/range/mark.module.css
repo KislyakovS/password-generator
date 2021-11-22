@@ -16,9 +16,9 @@
   display: block;
   margin-top: 15px;
 
-  color: #353940;
+  color: var(--second-text-color);
 }
 
 .current .label {
-  color: var(--white-color)
+  color: var(--text-color);
 }

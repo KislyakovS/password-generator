@@ -13,6 +13,7 @@
 
   --primary-color: var(--blue-color);
   --text-color: var(--white-color);
+  --second-text-color: #353940;
   --body-background: var(--black-color-1);
 
   /* font */

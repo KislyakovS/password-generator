@@ -3,7 +3,7 @@
   align-items: center;
 
   font-size: 16px;
-  color: #353940;
+  color: var(--second-text-color);
 
   cursor: pointer;
   transition: all .4s;
@@ -11,7 +11,7 @@
 
 .checkbox:hover,
 .checkbox:focus {
-  color: var(--white-color);
+  color: var(--text-color);
 }
 
 .checkbox:hover .box,
@@ -20,7 +20,7 @@
 }
 
 .checkbox.checked {
-  color: var(--white-color);
+  color: var(--text-color);
 }
 
 .box {
