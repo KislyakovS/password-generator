@@ -1,10 +1,10 @@
-import { Password } from '../../src/utils/password';
+import { PasswordGenerator } from '../../src/utils/password-generator';
 
 describe('When using the password generator, it:', () => {
-  let password = new Password();
+  let password = new PasswordGenerator();
 
   beforeEach(() => {
-    password = new Password();
+    password = new PasswordGenerator();
   });
 
   it('should generate a password of default length 12', () => {
