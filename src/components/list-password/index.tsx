@@ -2,6 +2,9 @@
 import { FC } from 'react';
 import { observer } from 'mobx-react-lite';
 
+// Assets
+import CopyIcon from './icons/copy.svg';
+
 // State
 import { password } from '../../store/password';
 
@@ -19,7 +22,13 @@ const ListPassword: FC = observer(() => {
         <li key={p} className={classes.item}>
           <div className={classes.line}>
             <span>{p}</span>
-            <button className={classes.button}>Click to copy</button>
+            <button
+              className={classes.button}
+              onClick={() => navigator.clipboard.writeText(p)}
+            >
+              <CopyIcon />
+              Click to copy
+            </button>
           </div>
         </li>
       ))}
