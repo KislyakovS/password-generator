@@ -113,6 +113,16 @@ class PasswordGenerator {
 
     return password;
   }
+
+  public generateMultiple(count = 5): string[] {
+    const passwords: string[] = [];
+
+    for (let _ = 0; _ < count; _++) {
+      passwords.push(this.generate());
+    }
+
+    return passwords;
+  }
 }
 
 export { defaultOptions, PasswordGenerator };

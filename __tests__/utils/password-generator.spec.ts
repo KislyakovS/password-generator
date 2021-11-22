@@ -79,4 +79,12 @@ describe('When using the password generator, it:', () => {
     expect(passwordStr).toMatch(/[A-Z]/);
     expect(passwordStr).toMatch(/[a-z]/);
   });
+
+  it('should 6 passwords be generated', () => {
+    const COUNT_PASSWORD = 6;
+
+    const passwords = password.generateMultiple(COUNT_PASSWORD);
+
+    expect(passwords).toHaveLength(COUNT_PASSWORD);
+  })
 });
