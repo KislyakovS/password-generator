@@ -1,79 +1,43 @@
 // Core
-import { FC, useState } from 'react';
+import { FC, FormEvent, useCallback } from 'react';
+import { observer } from 'mobx-react-lite';
 
 // Components
-import { Section, Range, Checkbox, Button, Input } from '../../ui';
+import { Section, Button } from '../../ui';
+import { Length } from './length';
+import { Checkboxes } from './checkboxes';
+import { Strength } from './strength';
+
+// State
+import { password } from '../../store/password';
 
 // Styles
 import * as classes from './form-generate.module.css';
 
-const MIN = 1;
-const MAX = 4;
-const STEP = 1;
+const FormGenerate: FC = observer(() => {
+  const onSubmit = useCallback((event: FormEvent) => {
+    event.preventDefault();
 
-const FormGenerate: FC = () => {
-  const [type, setType] = useState(1);
-  const [length, setLength] = useState(12)
+    password.generate();
+  }, [password]);
 
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={onSubmit}>
       <Section title="Strength" description="Use ← → for quick setup">
-        <Range
-          value={type}
-          min={MIN}
-          max={MAX}
-          step={STEP}
-          marks={['Bad', 'Low', 'Medium', 'High']}
-          onChange={setType}
-        />
+        <Strength />
       </Section>
       <Section title="Custom" description="Make custom password">
-        <div className={classes.chekcboxs}>
-          <Checkbox
-            name="uppercase"
-            checked={true}
-            onChange={() => { }}
-          >
-            Uppercase
-          </Checkbox>
-          <Checkbox
-            name="lowercase"
-            checked={false}
-            onChange={() => { }}
-          >
-            Lowercase
-          </Checkbox>
-          <Checkbox
-            name="numbers"
-            checked={false}
-            onChange={() => { }}
-          >
-            Numbers
-          </Checkbox>
-          <Checkbox
-            name="symbols"
-            checked={false}
-            onChange={() => { }}
-          >
-            Symbols
-          </Checkbox>
-        </div>
-        <div className={classes.length}>
-          <Range
-            className={classes.lengthRange}
-            value={length}
-            min={1}
-            max={100}
-            onChange={setLength}
-          />
-          <Input className={classes.lengthInput} value={length} />
-        </div>
+        <Checkboxes className={classes.checkboxes} />
+        <Length />
       </Section>
-      <Button className={classes.submit} description="Or press ↩︎ ENTER">
+      <Button
+        className={classes.submit}
+        description="Or press ↩︎ ENTER"
+      >
         Generate
       </Button>
     </form>
   )
-}
+})
 
 export { FormGenerate };

@@ -36,7 +36,7 @@ const strictRules: StrictRuleType[] = [
   { name: 'isLowercase', regex: /[a-z]/ },
 ];
 
-class Password {
+class PasswordGenerator {
   private options: OptionsType;
 
   constructor(options: OptionsType = defaultOptions) {
@@ -113,6 +113,16 @@ class Password {
 
     return password;
   }
+
+  public generateMultiple(count = 5): string[] {
+    const passwords: string[] = [];
+
+    for (let _ = 0; _ < count; _++) {
+      passwords.push(this.generate());
+    }
+
+    return passwords;
+  }
 }
 
-export { defaultOptions, Password };
+export { defaultOptions, PasswordGenerator };

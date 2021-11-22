@@ -1,10 +1,10 @@
-import { Password } from '../../src/utils/password';
+import { PasswordGenerator } from '../../src/utils/password-generator';
 
 describe('When using the password generator, it:', () => {
-  let password = new Password();
+  let password = new PasswordGenerator();
 
   beforeEach(() => {
-    password = new Password();
+    password = new PasswordGenerator();
   });
 
   it('should generate a password of default length 12', () => {
@@ -79,4 +79,12 @@ describe('When using the password generator, it:', () => {
     expect(passwordStr).toMatch(/[A-Z]/);
     expect(passwordStr).toMatch(/[a-z]/);
   });
+
+  it('should 6 passwords be generated', () => {
+    const COUNT_PASSWORD = 6;
+
+    const passwords = password.generateMultiple(COUNT_PASSWORD);
+
+    expect(passwords).toHaveLength(COUNT_PASSWORD);
+  })
 });

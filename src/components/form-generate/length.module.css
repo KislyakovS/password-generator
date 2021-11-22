@@ -1,0 +1,14 @@
+.length {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.range {
+  width: 80%;
+  margin-right: 20px;
+}
+
+.input {
+  width: calc(20% - 20px);
+}

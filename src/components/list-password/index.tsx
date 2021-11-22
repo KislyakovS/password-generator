@@ -1,20 +1,30 @@
 // Core
 import { FC } from 'react';
+import { observer } from 'mobx-react-lite';
+
+// State
+import { password } from '../../store/password';
 
 // Styles
 import * as classes from './list-password.module.css';
 
-const ListPassword: FC = () => (
-  <ul className={classes.list}>
-    {["eQe@8ZZ&Qbuv$Kcd", "SD?w7LD_EW98zR-r", "MhEQ79hJx_^#$^SQ", "98@Nz$SNky=4UU3v"].map(password => (
-      <li key={password} className={classes.item}>
-        <div className={classes.line}>
-          <span>{password}</span>
-          <button className={classes.button}>Click to copy</button>
-        </div>
-      </li>
-    ))}
-  </ul>
-)
+const ListPassword: FC = observer(() => {
+  if (password.passwords.length === 0) {
+    return null;
+  }
+
+  return (
+    <ul className={classes.list}>
+      {password.passwords.map(p => (
+        <li key={p} className={classes.item}>
+          <div className={classes.line}>
+            <span>{p}</span>
+            <button className={classes.button}>Click to copy</button>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
+})
 
 export { ListPassword }
