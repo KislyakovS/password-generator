@@ -5,26 +5,8 @@
   row-gap: 60px;
 }
 
-.chekcboxs {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.checkboxes {
   margin-bottom: 30px;
-}
-
-.length {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.lengthRange {
-  width: 80%;
-  margin-right: 20px;
-}
-
-.lengthInput {
-  width: calc(20% - 20px);
 }
 
 .submit {
