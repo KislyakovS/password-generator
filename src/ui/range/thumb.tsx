@@ -1,5 +1,5 @@
 // Core
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 // Instruments
 import * as classes from './thumb.module.css';

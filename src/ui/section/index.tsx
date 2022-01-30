@@ -1,5 +1,5 @@
 // Core
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 // Styles
 import * as classes from './section.module.css';

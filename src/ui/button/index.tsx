@@ -1,5 +1,5 @@
 // Core
-import { FC, MouseEvent, ReactNode } from 'react';
+import React, { FC, MouseEvent, ReactNode } from 'react';
 
 // Styles
 import * as classes from './button.module.css';

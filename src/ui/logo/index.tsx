@@ -1,5 +1,5 @@
 // Core
-import { FC, memo } from 'react';
+import React, { FC, memo } from 'react';
 
 // Styles
 import * as classes from './logo.module.css';

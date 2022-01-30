@@ -1,5 +1,5 @@
 // Core
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 // Styles
 import * as classes from './mark.module.css';
