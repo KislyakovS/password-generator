@@ -16,14 +16,12 @@ describe('Component Checkbox', () => {
   });
 
   it('should call for a change on the checkbox', () => {
-    const onChange = jest.fn();
-
-    const { getByRole } = render(<Checkbox onChange={onChange}>Checkbox</Checkbox>);
+    const { getByRole } = render(<Checkbox>Checkbox</Checkbox>);
     const element = getByRole('checkbox');
 
-    fireEvent.click(element);
+    fireEvent.change(element, { target: { checked: true } });
 
-    expect(onChange).toHaveBeenCalled();
+    expect(element).toBeChecked();
   });
 
   it('should the checkbox be checked', () => {
