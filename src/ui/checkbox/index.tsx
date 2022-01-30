@@ -1,5 +1,5 @@
 // Core
-import { FC, DetailedHTMLProps, InputHTMLAttributes, ReactNode } from 'react';
+import React, { FC, DetailedHTMLProps, InputHTMLAttributes, ReactNode } from 'react';
 
 // Icons
 import CheckIcon from './icons/check.svg';

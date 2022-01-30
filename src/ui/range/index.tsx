@@ -1,5 +1,5 @@
 // Core
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Range as Input } from 'react-range';
 
 // Components

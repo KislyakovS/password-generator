@@ -6,7 +6,13 @@
       "useESM": true
     }
   },
+  "testEnvironment": "jsdom",
   "moduleNameMapper": {
-    "^(\\.{1,2}/.*)\\.ts$": "$1"
-  }
+    "^(\\.{1,2}/.*)\\.ts$": "$1",
+    "\\.(css|scss)$": "<rootDir>/__mocks__/style.ts",
+    "\\.svg": "<rootDir>/__mocks__/icon.tsx"
+  },
+  "setupFilesAfterEnv": [
+    "<rootDir>/jest-setup.ts"
+  ]
 }

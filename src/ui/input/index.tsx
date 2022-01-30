@@ -1,5 +1,5 @@
 // Core
-import { FC, DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
 // Instruments
 import * as classes from './input.module.css';
