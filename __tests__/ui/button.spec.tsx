@@ -19,7 +19,7 @@ describe('Component Button', () => {
     container.remove();
   });
 
-  it('should be text in the button Button 1', () => {
+  it('should be text in the button "Button 1"', () => {
     const CHILDREN_TEXT = 'Button 1';
 
     act(() => {
