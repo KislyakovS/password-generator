@@ -3,7 +3,7 @@ import { FC, FormEvent, useCallback } from 'react';
 import { observer } from 'mobx-react-lite';
 
 // Components
-import { Section, Button } from '../../ui';
+import { Fieldset, Button } from '../../ui';
 import { Length } from './length';
 import { Checkboxes } from './checkboxes';
 import { Strength } from './strength';
@@ -23,13 +23,13 @@ const FormGenerate: FC = observer(() => {
 
   return (
     <form className={classes.form} onSubmit={onSubmit}>
-      <Section title="Strength" description="Use ← → for quick setup">
+      <Fieldset legend="Strength" description="Use ← → for quick setup">
         <Strength />
-      </Section>
-      <Section title="Custom" description="Make custom password">
+      </Fieldset>
+      <Fieldset legend="Custom" description="Make custom password">
         <Checkboxes className={classes.checkboxes} />
         <Length />
-      </Section>
+      </Fieldset>
       <Button
         className={classes.submit}
         description="Or press ↩︎ ENTER"

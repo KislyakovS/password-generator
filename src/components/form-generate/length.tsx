@@ -1,5 +1,5 @@
 // Core
-import { FC } from 'react';
+import { FC, useCallback, ChangeEvent } from 'react';
 import { observer } from 'mobx-react-lite';
 
 // Components
@@ -15,6 +15,11 @@ const MIN_RANGE = 1;
 const MAX_RANGE = 100;
 
 const Length: FC = observer(() => {
+  const onChangeRage = useCallback((value: number) => password.setLength(value), []);
+  const onChangeInput = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+    password.setLength(+event.target.value)
+  }, []);
+
   return (
     <div className={classes.length}>
       <Range
@@ -22,12 +27,14 @@ const Length: FC = observer(() => {
         value={password.customize.length}
         min={MIN_RANGE}
         max={MAX_RANGE}
-        onChange={(value) => password.setLength(value)}
+        onChange={onChangeRage}
       />
       <Input
         className={classes.input}
+        label='Password length'
+        isHiddenLabel={true}
         value={password.customize.length}
-        onChange={(event) => password.setLength(+event.target.value)}
+        onChange={onChangeInput}
       />
     </div>
   )
