@@ -1,11 +1,13 @@
-.section {
-  padding: 40px 50px;
+.fieldset {
+  padding: 60px 50px 40px 50px;
 
   background-color:var(--black-color-2);
+  border: none;
 }
 
-.title {
+.legend {
   margin: 0px 0px 25px 0px;
+  transform: translatey(60px);
 
   font-size: 45px;
   font-weight: normal;
