@@ -5,10 +5,18 @@ import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import * as classes from './input.module.css';
 
 // Types
-type InputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+type DefaultElement = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+type InputPropsType = DefaultElement & {
+  label: string,
+  isHiddenLabel?: boolean,
+}
 
-const Input: FC<InputPropsType> = ({ className, ...props }) => {
-  return <input className={`${classes.input} ${className ? className : ''}`} {...props} />
+
+const Input: FC<InputPropsType> = ({ className, label, isHiddenLabel = false, ...props }) => {
+  return <label className={className ? className : ''}>
+    <span className={isHiddenLabel ? classes.visuallyHidden : ''}>{label}</span>
+    <input className={classes.input} {...props} />
+  </label>
 }
 
 export { Input };
