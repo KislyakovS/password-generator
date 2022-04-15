@@ -9,6 +9,9 @@ import React, {
 // Styles
 import * as classes from "./switcher.module.css";
 
+// Utils
+import { randomNumber } from '../../utils/random-number';
+
 // Types
 type SwitcherPropsType = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
@@ -16,7 +19,7 @@ type SwitcherPropsType = DetailedHTMLProps<
 >;
 
 const Switcher: FC<SwitcherPropsType> = ({ className, children, ...props }) => {
-  const id = useMemo(() => crypto.randomUUID(), []);
+  const id = useMemo(() => randomNumber(0, 100).toString(), []);
 
   return (
     <>

@@ -14,7 +14,7 @@
   height: calc(var(--size-thumb) + var(--indent) * 2);
   padding: var(--indent);
 
-  background-color: var(--second-background);
+  background-color: var(--second-text-color);
   border-radius: 40px;
 
   transition: background-color var(--transition-duration);
@@ -55,5 +55,6 @@
 }
 
 .label {
+  display: flex;
   margin-left: 5px;
 }
