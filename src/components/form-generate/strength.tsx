@@ -1,16 +1,16 @@
 // Core
-import { FC } from 'react';
-import { observer } from 'mobx-react-lite';
+import { FC } from "react";
+import { observer } from "mobx-react-lite";
 
 // Components
-import { Range } from '../../ui';
+import { Range } from "../../ui";
 
 // State
-import { password } from '../../store/password';
+import { password } from "../../store/password";
 
 const MIN_RANGE = 1;
 const MAX_RANGE = 4;
-const MARKS = ['Bad', 'Low', 'Medium', 'High'];
+const MARKS = ["Bad", "Low", "Medium", "High"];
 
 const Strength: FC = observer(() => {
   return (
@@ -19,9 +19,9 @@ const Strength: FC = observer(() => {
       min={MIN_RANGE}
       max={MAX_RANGE}
       marks={MARKS}
-      onChange={(value) => password.setStrength(value)}
+      onChange={value => password.setStrength(value)}
     />
-  )
-})
+  );
+});
 
-export { Strength }
+export { Strength };

@@ -2,13 +2,13 @@
   max-width: 100%;
   padding-bottom: 10px;
 
-  font-size: 14px;
+  font-size: var(--font-size-small);
   color: var(--second-text-color);
 
   border: none;
-  border-bottom: 1px solid #353940;
+  border-bottom: 1px solid var(--second-text-color);
   background-color: transparent;
-  transition: all .3s;
+  transition: all var(--transition-duration);
 
   outline: none;
 }
@@ -17,17 +17,5 @@
 .input:focus {
   color: var(--text-color);
 
-  border-bottom-color: var(--white-color);
-}
-
-.visuallyHidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+  border-bottom-color: var(--text-color);
 }

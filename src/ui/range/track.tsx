@@ -1,19 +1,22 @@
 // Core
-import React, { FC, ReactNode } from 'react';
-import { getTrackBackground } from 'react-range';
+import React, { FC, ReactNode } from "react";
+import { getTrackBackground } from "react-range";
 
 // Instruments
-import * as classes from './track.module.css';
+import * as classes from "./track.module.css";
 
 // Types
-import { ITrackProps } from 'react-range/lib/types';
+import { ITrackProps } from "react-range/lib/types";
 
 type TrackType = {
-  props: ITrackProps,
-  children: ReactNode,
-}
+  props: ITrackProps;
+  children: ReactNode;
+};
 
-const track = (min: number, max: number, value: number): FC<TrackType> => ({ props, children }: TrackType) => {
+const track = (min: number, max: number, value: number): FC<TrackType> => ({
+  props,
+  children
+}: TrackType) => {
   return (
     <div
       onMouseDown={props.onMouseDown}
@@ -26,9 +29,9 @@ const track = (min: number, max: number, value: number): FC<TrackType> => ({ pro
         style={{
           background: getTrackBackground({
             values: [value],
-            colors: ['#1e75d0', '#353940'],
+            colors: ["#1e75d0", "#353940"],
             min,
-            max,
+            max
           })
         }}
         className={classes.line}
@@ -37,6 +40,6 @@ const track = (min: number, max: number, value: number): FC<TrackType> => ({ pro
       </div>
     </div>
   );
-}
+};
 
 export { track };

@@ -1,15 +1,15 @@
 // Core
-import { FC } from 'react';
-import { observer } from 'mobx-react-lite';
+import { FC } from "react";
+import { observer } from "mobx-react-lite";
 
 // Assets
-import CopyIcon from './icons/copy.svg';
+import CopyIcon from "./icons/copy.svg";
 
 // State
-import { password } from '../../store/password';
+import { password } from "../../store/password";
 
 // Styles
-import * as classes from './list-password.module.css';
+import * as classes from "./list-password.module.css";
 
 const ListPassword: FC = observer(() => {
   if (password.passwords.length === 0) {
@@ -33,7 +33,7 @@ const ListPassword: FC = observer(() => {
         </li>
       ))}
     </ul>
-  )
-})
+  );
+});
 
-export { ListPassword }
+export { ListPassword };

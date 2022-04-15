@@ -1,18 +1,18 @@
 // Core
-import React, { FC } from 'react';
+import React, { FC } from "react";
 
 // Instruments
-import * as classes from './thumb.module.css';
+import * as classes from "./thumb.module.css";
 
 // Types
-import { IThumbProps } from 'react-range/lib/types';
+import { IThumbProps } from "react-range/lib/types";
 
 type ThumbType = {
-  props: IThumbProps,
-}
+  props: IThumbProps;
+};
 
 const Thumb: FC<ThumbType> = ({ props }: ThumbType) => {
   return <div {...props} className={classes.slider} />;
-}
+};
 
 export { Thumb };

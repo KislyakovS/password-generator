@@ -1,22 +1,27 @@
 .fieldset {
-  padding: 60px 50px 40px 50px;
+  --uint: 50px;
+  --uint-inner: calc(var(--uint) / 2);
 
-  background-color:var(--black-color-2);
+  padding: var(--uint);
+
+  background-color:var(--second-background);
+  border-radius: var(--border-radius);
   border: none;
+  box-shadow: var(--box-shadow);
 }
 
 .legend {
-  margin: 0px 0px 25px 0px;
-  transform: translatey(60px);
+  margin: 0px 0px var(--uint-inner) 0px;
+  transform: translatey(calc(var(--uint) + 10px));
 
-  font-size: 45px;
+  font-size: var(--font-size-large);
   font-weight: normal;
 }
 
 .description {
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px var(--uint-inner) 0px;
 
-  font-size: 14px;
+  font-size: var(--font-size-small);
 
   opacity: 0.2;
 }

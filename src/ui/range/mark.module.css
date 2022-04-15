@@ -1,11 +1,13 @@
 .mark {
+  --size: 10px;
+
   display: flex;
   justify-content: center;
-  width: 10px;
-  height: 10px;
+  width: var(--size);
+  height: var(--size);
 
   border-radius: 50%;
-  background-color: #353940;
+  background-color: var(--second-text-color);
 }
 
 .active {

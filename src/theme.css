@@ -1,0 +1,19 @@
+.dark {
+  --primary-color: #1e75d0;
+  --text-color: #ffffff;
+  --second-text-color: #353940;
+  --body-background: #191d24;
+  --second-background: #1f232b;
+  --check-stroke: var(--primary-color);
+  --box-shadow: none;
+}
+
+.light {
+  --primary-color: #1e75d0;
+  --text-color: #353940;
+  --second-text-color: #353940;
+  --body-background: #f6f8fa;
+  --second-background: #ffffff;
+  --check-stroke: var(--second-background);
+  --box-shadow: 0 3px 6px rgba(140,149,159,0.15);
+}
