@@ -17,7 +17,7 @@
 .input:focus {
   color: var(--text-color);
 
-  border-bottom-color: var(--white-color);
+  border-bottom-color: var(--text-color);
 }
 
 .visuallyHidden {

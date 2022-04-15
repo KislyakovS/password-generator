@@ -16,7 +16,7 @@
 
 .checkbox:hover .box,
 .checkbox:focus .box {
-  border-color: var(--white-color);
+  border-color: var(--text-color);
 }
 
 .checkbox.checked {
@@ -31,7 +31,7 @@
   height: 23px;
   margin-right: 10px;
 
-  border: 2px solid #353940;
+  border: 2px solid var(--second-text-color);
   border-radius: 5px;
 
   transition: all .4s;
@@ -45,6 +45,6 @@
 }
 
 .input:checked + .box {
-  border-color: var(--white-color);
-  background-color: var(--white-color);
+  border-color: var(--text-color);
+  background-color: var(--text-color);
 }
