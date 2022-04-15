@@ -4,15 +4,7 @@
   box-sizing: border-box;
 }
 
-
 :root {
-  /* colors */
-  --primary-color: #1e75d0;
-  --text-color: #ffffff;
-  --second-text-color: #353940;
-  --body-background: #191d24;
-  --second-background: #1f232b;
-
   /* fonts */
   --font-family: 'Lato', sans-serif;
   --font-size-large: 45px;
@@ -21,7 +13,10 @@
 
   /* transition */
   --transition-duration: .4s;
+
+  --border-radius: 5px;
 }
+
 
 html,
 body {
@@ -40,6 +35,12 @@ body {
 
 #app {
   padding: 25px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .container {
