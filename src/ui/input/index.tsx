@@ -14,7 +14,7 @@ type InputPropsType = DefaultElement & {
 
 const Input: FC<InputPropsType> = ({ className, label, isHiddenLabel = false, ...props }) => {
   return <label className={className ? className : ''}>
-    <span className={isHiddenLabel ? classes.visuallyHidden : ''}>{label}</span>
+    <span className={isHiddenLabel ? 'visually-hidden' : ''}>{label}</span>
     <input className={classes.input} {...props} />
   </label>
 }
