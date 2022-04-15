@@ -1,6 +1,6 @@
 // Components
-import { Logo } from './ui';
-import { FormGenerate, ListPassword } from './components';
+import { Logo } from "./ui";
+import { FormGenerate, ListPassword } from "./components";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <ListPassword />
       </div>
     </>
-  )
-}
+  );
+};
 
 export { App };

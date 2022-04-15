@@ -1,17 +1,18 @@
-import { randomNumber } from './random-number';
+import { randomNumber } from "./random-number";
 
 export type OptionsType = {
-  [key: string]: boolean | number | undefined,
-  length?: number,
-  isNumber?: boolean,
-  isSymbol?: boolean,
-  isUppercase?: boolean,
-  isLowercase?: boolean,
+  [key: string]: boolean | number | undefined;
+  length?: number;
+  isNumber?: boolean;
+  isSymbol?: boolean;
+  isUppercase?: boolean;
+  isLowercase?: boolean;
 };
 
 type StrictRuleType = {
-  name: string, regex: RegExp,
-}
+  name: string;
+  regex: RegExp;
+};
 
 const defaultOptions = Object.freeze({
   length: 12,
@@ -19,21 +20,21 @@ const defaultOptions = Object.freeze({
   isSymbol: true,
   isUppercase: false,
   isLowercase: true,
-  isStrict: false,
+  isStrict: false
 });
 
 const combinations = Object.freeze({
-  numbers: '0123456789',
+  numbers: "0123456789",
   symbols: '!@#$%^&*()+_-=}{[]|:;"/?.><,`~',
-  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-  lowercase: 'abcdefghijklmnopqrstuvwxyz',
+  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  lowercase: "abcdefghijklmnopqrstuvwxyz"
 });
 
 const strictRules: StrictRuleType[] = [
-  { name: 'isNumber', regex: /[0-9]/ },
-  { name: 'isSymbol', regex: /[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]/ },
-  { name: 'isUppercase', regex: /[A-Z]/ },
-  { name: 'isLowercase', regex: /[a-z]/ },
+  { name: "isNumber", regex: /[0-9]/ },
+  { name: "isSymbol", regex: /[!@#$%^&*()+_\-=}{[\]|:;"/?.><,`~]/ },
+  { name: "isUppercase", regex: /[A-Z]/ },
+  { name: "isLowercase", regex: /[a-z]/ }
 ];
 
 class PasswordGenerator {
@@ -44,10 +45,8 @@ class PasswordGenerator {
   }
 
   private getPool() {
-    const {
-      isNumber, isSymbol, isUppercase, isLowercase,
-    } = this.options;
-    let pool = '';
+    const { isNumber, isSymbol, isUppercase, isLowercase } = this.options;
+    let pool = "";
 
     if (isNumber) {
       pool += combinations.numbers;
@@ -66,14 +65,16 @@ class PasswordGenerator {
     }
 
     if (!pool) {
-      throw new Error('there are no configuration fields, use the method "setup"');
+      throw new Error(
+        'there are no configuration fields, use the method "setup"'
+      );
     }
 
     return pool;
   }
 
   private checkingStrict(password: string): boolean {
-    const isStrict = strictRules.every((rule) => {
+    const isStrict = strictRules.every(rule => {
       const { name, regex } = rule;
 
       if (!this.options[name]) {
@@ -89,7 +90,7 @@ class PasswordGenerator {
   public setup(options: OptionsType) {
     this.options = {
       ...this.options,
-      ...options,
+      ...options
     };
   }
 
@@ -102,7 +103,7 @@ class PasswordGenerator {
 
     const pool = this.getPool();
 
-    let password = '';
+    let password = "";
     for (let _ = 0; _ < length; _++) {
       password += pool[randomNumber(0, pool.length - 1)];
     }

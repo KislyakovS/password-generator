@@ -5,7 +5,9 @@
   padding: var(--uint);
 
   background-color:var(--second-background);
+  border-radius: var(--border-radius);
   border: none;
+  box-shadow: var(--box-shadow);
 }
 
 .legend {

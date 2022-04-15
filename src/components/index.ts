@@ -1,2 +1,2 @@
-export { ListPassword } from './list-password';
-export { FormGenerate } from './form-generate';
+export { ListPassword } from "./list-password";
+export { FormGenerate } from "./form-generate";

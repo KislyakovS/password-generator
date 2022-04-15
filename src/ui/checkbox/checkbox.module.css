@@ -50,3 +50,7 @@
   border-color: var(--text-color);
   background-color: var(--text-color);
 }
+
+.check {
+  stroke: var(--check-stroke);
+}
