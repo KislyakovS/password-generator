@@ -1,20 +1,23 @@
 .fieldset {
-  padding: 60px 50px 40px 50px;
+  --uint: 50px;
+  --uint-inner: calc(var(--uint) / 2);
+
+  padding: var(--uint);
 
   background-color:var(--second-background);
   border: none;
 }
 
 .legend {
-  margin: 0px 0px 25px 0px;
-  transform: translatey(60px);
+  margin: 0px 0px var(--uint-inner) 0px;
+  transform: translatey(calc(var(--uint) + 10px));
 
   font-size: var(--font-size-large);
   font-weight: normal;
 }
 
 .description {
-  margin: 0px 0px 25px 0px;
+  margin: 0px 0px var(--uint-inner) 0px;
 
   font-size: var(--font-size-small);
 

@@ -18,6 +18,9 @@
   --font-size-large: 45px;
   --font-size-middle: 16px;
   --font-size-small: 14px;
+
+  /* transition */
+  --transition-duration: .4s;
 }
 
 html,
