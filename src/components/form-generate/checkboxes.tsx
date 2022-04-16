@@ -11,6 +11,9 @@ import { password } from "../../store/password";
 // Styles
 import * as classes from "./checkboxes.module.css";
 
+// Utils
+import { clsx } from '../../utils';
+
 // Types
 type CheckboxesPropsType = {
   className?: string;
@@ -18,7 +21,7 @@ type CheckboxesPropsType = {
 
 const Checkboxes: FC<CheckboxesPropsType> = observer(({ className }) => {
   return (
-    <div className={`${classes.checkboxes} ${className ? className : ""}`}>
+    <div className={clsx(classes.checkboxes, className)}>
       <Checkbox
         name="uppercase"
         checked={password.customize.isUppercase}

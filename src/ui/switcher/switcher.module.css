@@ -4,8 +4,8 @@
 }
 
 .track {
-  --width-track: 65px;
-  --size-thumb: 26px;
+  --width-track: 50px;
+  --size-thumb: 20px;
   --indent: 2px;
 
   display: flex;

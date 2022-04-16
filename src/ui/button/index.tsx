@@ -4,6 +4,9 @@ import React, { FC, MouseEvent, ReactNode } from "react";
 // Styles
 import * as classes from "./button.module.css";
 
+// Utils
+import { clsx } from '../../utils';
+
 // Types
 type ButtonPropsType = {
   className?: string;
@@ -18,7 +21,7 @@ const Button: FC<ButtonPropsType> = ({
   onClick,
   children
 }) => (
-  <div className={`${classes.container} ${className ? className : ""}`}>
+  <div className={clsx(classes.container, className)}>
     <button className={classes.button} onClick={onClick}>
       {children}
     </button>

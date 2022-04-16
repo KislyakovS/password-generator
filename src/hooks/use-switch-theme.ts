@@ -1,7 +1,7 @@
 // Core
 import { useState, useCallback, useEffect, ChangeEvent } from "react";
 
-import { Theme, ThemeStorage } from '../utils/theme-storage';
+import { Theme, ThemeStorage } from '../utils';
 
 const themeStorage = new ThemeStorage();
 

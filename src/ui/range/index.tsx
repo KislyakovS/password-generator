@@ -7,6 +7,9 @@ import { track } from "./track";
 import { Thumb } from "./thumb";
 import { mark } from "./mark";
 
+// Utils
+import { clsx } from '../../utils';
+
 // Types
 export type RangeType = {
   className?: string;
@@ -28,7 +31,7 @@ const Range: FC<RangeType> = ({
   onChange
 }: RangeType) => {
   return (
-    <div className={className ? className : ""}>
+    <div className={clsx(className)}>
       <Input
         values={[value]}
         step={step}

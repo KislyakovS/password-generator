@@ -1,5 +1,5 @@
 // Core
-import React from "react";
+import React, { FC } from "react";
 
 // Components
 import { Switcher } from "../../ui";
@@ -14,7 +14,7 @@ import { useSwitchTheme } from "../../hooks";
 // Styles
 import * as classes from "./switch-theme.module.css";
 
-const SwitchTheme = () => {
+const SwitchTheme: FC = () => {
   const { isDark, onSwitchTheme } = useSwitchTheme();
 
   return (
