@@ -1,5 +1,5 @@
 // Core
-import { FC, useCallback, ChangeEvent } from "react";
+import React, { FC, useCallback, ChangeEvent } from "react";
 import { observer } from "mobx-react-lite";
 
 // Components

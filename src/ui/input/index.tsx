@@ -1,8 +1,11 @@
 // Core
 import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from "react";
 
-// Instruments
+// Styles
 import * as classes from "./input.module.css";
+
+// Utils
+import { clsx } from '../../utils';
 
 // Types
 type DefaultElement = DetailedHTMLProps<
@@ -19,13 +22,11 @@ const Input: FC<InputPropsType> = ({
   label,
   isHiddenLabel = false,
   ...props
-}) => {
-  return (
-    <label className={className ? className : ""}>
-      <span className={isHiddenLabel ? "visually-hidden" : ""}>{label}</span>
-      <input className={classes.input} {...props} />
-    </label>
-  );
-};
+}) => (
+  <label className={clsx(className)}>
+    <span className={clsx({ ["visually-hidden"]: isHiddenLabel })}>{label}</span>
+    <input className={classes.input} {...props} />
+  </label >
+);
 
 export { Input };

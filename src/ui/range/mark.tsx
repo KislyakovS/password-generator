@@ -4,6 +4,9 @@ import React, { FC } from "react";
 // Styles
 import * as classes from "./mark.module.css";
 
+// Utils
+import { clsx } from '../../utils';
+
 // Types
 import { IMarkProps } from "react-range/lib/types";
 
@@ -28,11 +31,10 @@ const mark = (
   return (
     <div
       {...props}
-      className={`
-      ${classes.mark} 
-      ${getIsActiveMark(index, step, value) ? classes.active : ""}
-      ${getIsCurrentMark(index, step, value) ? classes.current : ""}
-    `}
+      className={clsx(classes.mark, {
+        [classes.active]: getIsActiveMark(index, step, value),
+        [classes.current]: getIsCurrentMark(index, step, value)
+      })}
     >
       <span className={classes.label}>{labels[index]}</span>
     </div>

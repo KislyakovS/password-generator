@@ -9,8 +9,11 @@ import React, {
 // Icons
 import CheckIcon from "./icons/check.svg";
 
-// Instruments
+// Styles
 import * as classes from "./checkbox.module.css";
+
+// Utils
+import { clsx } from '../../utils';
 
 // Types
 type DefaultElement = DetailedHTMLProps<
@@ -27,25 +30,21 @@ const Checkbox: FC<CheckboxPropsType> = ({
   checked,
   children,
   ...props
-}) => {
-  return (
-    <label
-      className={`${classes.checkbox} ${className ? className : ""} ${
-        checked ? classes.checked : ""
-      }`}
-    >
-      <input
-        className={classes.input}
-        {...props}
-        type="checkbox"
-        checked={checked}
-      />
-      <span className={classes.box}>
-        {checked && <CheckIcon className={classes.check} />}
-      </span>
-      {children}
-    </label>
-  );
-};
+}) => (
+  <label
+    className={clsx(classes.checkbox, className, { [classes.checked]: Boolean(checked) })}
+  >
+    <input
+      className={classes.input}
+      {...props}
+      type="checkbox"
+      checked={checked}
+    />
+    <span className={classes.box}>
+      {checked && <CheckIcon className={classes.check} />}
+    </span>
+    {children}
+  </label>
+);
 
 export { Checkbox };
