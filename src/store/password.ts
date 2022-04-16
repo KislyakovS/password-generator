@@ -1,6 +1,6 @@
 // Core
 import { makeAutoObservable } from "mobx";
-import { defaultOptions, PasswordGenerator } from "../utils/password-generator";
+import { defaultOptions, PasswordGenerator } from "../utils";
 
 enum Strength {
   bad = 1,

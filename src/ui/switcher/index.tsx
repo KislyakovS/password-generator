@@ -10,7 +10,7 @@ import React, {
 import * as classes from "./switcher.module.css";
 
 // Utils
-import { randomNumber } from '../../utils/random-number';
+import { randomNumber } from '../../utils';
 
 // Types
 type SwitcherPropsType = DetailedHTMLProps<
