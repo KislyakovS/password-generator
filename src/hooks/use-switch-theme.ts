@@ -1,5 +1,7 @@
 // Core
-import { useState, useCallback, useEffect, ChangeEvent } from "react";
+import {
+  useState, useCallback, useEffect, ChangeEvent,
+} from 'react';
 
 import { Theme, ThemeStorage } from '../utils';
 
@@ -46,7 +48,7 @@ const useSwitchTheme = () => {
     }
   }, []);
 
-  return { isDark, onSwitchTheme }
+  return { isDark, onSwitchTheme };
 };
 
 export { useSwitchTheme };

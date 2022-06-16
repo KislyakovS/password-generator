@@ -16,4 +16,4 @@ abstract class Storage<K extends string, T> {
   }
 }
 
-export { Storage }
+export { Storage };

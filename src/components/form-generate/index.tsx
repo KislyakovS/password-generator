@@ -1,18 +1,18 @@
 // Core
-import React, { FC, FormEvent, useCallback } from "react";
-import { observer } from "mobx-react-lite";
+import React, { FC, FormEvent, useCallback } from 'react';
+import { observer } from 'mobx-react-lite';
 
 // Components
-import { Fieldset, Button } from "../../ui";
-import { Length } from "./length";
-import { Checkboxes } from "./checkboxes";
-import { Strength } from "./strength";
+import { Fieldset, Button } from '../../ui';
+import { Length } from './length';
+import { Checkboxes } from './checkboxes';
+import { Strength } from './strength';
 
 // State
-import { password } from "../../store/password";
+import { password } from '../../store/password';
 
 // Styles
-import * as classes from "./form-generate.module.css";
+import * as classes from './form-generate.module.css';
 
 const FormGenerate: FC = observer(() => {
   const onSubmit = useCallback(
@@ -21,7 +21,7 @@ const FormGenerate: FC = observer(() => {
 
       password.generate();
     },
-    [password]
+    [password],
   );
 
   return (

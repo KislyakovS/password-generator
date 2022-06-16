@@ -1,8 +1,8 @@
 // Core
-import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from "react";
+import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
 // Styles
-import * as classes from "./input.module.css";
+import * as classes from './input.module.css';
 
 // Utils
 import { clsx } from '../../utils';
@@ -24,9 +24,9 @@ const Input: FC<InputPropsType> = ({
   ...props
 }) => (
   <label className={clsx(className)}>
-    <span className={clsx({ ["visually-hidden"]: isHiddenLabel })}>{label}</span>
+    <span className={clsx({ 'visually-hidden': isHiddenLabel })}>{label}</span>
     <input className={classes.input} {...props} />
-  </label >
+  </label>
 );
 
 export { Input };
