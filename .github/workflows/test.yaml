@@ -1,4 +1,4 @@
-name: eslint
+name: test
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  eslint:
+  test:
     runs-on: ubuntu-latest
     container:
       image: node:16.15.1-alpine
@@ -15,5 +15,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: Instal dependencies
         run: npm ci
-      - name: Lint code on ESLint
-        run: npm run lint
+      - name: Test code
+        run: npm run test
