@@ -12,6 +12,7 @@
     }
   },
   "rules": {
+    "no-shadow": 0,
     "no-plusplus": 0,
     "react/function-component-definition": 0,
     "react/jsx-filename-extension": [
