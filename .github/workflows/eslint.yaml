@@ -8,7 +8,8 @@ on:
 
 jobs:
   eslint:
-    runs-on: node:16.15.1-alpine
+    container:
+      image: node:16.15.1-alpine
     steps:
       - uses: actions/checkout@v3
       - name: Instal dependencies
