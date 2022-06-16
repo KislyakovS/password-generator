@@ -8,6 +8,7 @@ on:
 
 jobs:
   eslint:
+    runs-on: ubuntu-latest
     container:
       image: node:16.15.1-alpine
     steps:
