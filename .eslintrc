@@ -3,9 +3,6 @@
     "airbnb",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": [
-    "@emotion"
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
