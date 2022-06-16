@@ -11,12 +11,9 @@ jobs:
     runs-on: ubuntu-lastes
     steps:
       - uses: actions/checkout@v3
-      - name: Instal NVM
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-      - name: Instal Node
-        env:
-          NODE_VERSION: 16.15.1
-        run: nvm install $NODE_VERSION
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Instal dependencies
         run: npm ci
       - name: lint code on ESLint
