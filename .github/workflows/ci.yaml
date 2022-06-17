@@ -5,7 +5,7 @@ on: [push]
 jobs:
   lint:
     name: ESLint
-    rune-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -19,7 +19,7 @@ jobs:
 
   test:
     name: Jest
-    rune-on: ubuntu-letest
+    runs-on: ubuntu-letest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
