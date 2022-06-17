@@ -1,0 +1,32 @@
+name: CI
+
+on: [push]
+
+jobs:
+  lint:
+    name: ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Install packages
+        run: npm ci
+      - name: Lint source code ESLint
+        run: npm run lint
+
+  test:
+    name: Jest
+    rune-on: ubuntu-letest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - name: Install packages
+        run: npm ci
+      - name: Unit-test
+        run: npm run test
