@@ -9,10 +9,12 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest
-    container:
-      image: node:16.15.1-alpine
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.1
+          cache: 'npm'
       - name: Instal dependencies
         run: npm ci
       - name: Lint code on ESLint
@@ -20,10 +22,12 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    container:
-      image: node:16.15.1-alpine
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.1
+          cache: 'npm'
       - name: Instal dependencies
         run: npm ci
       - name: Test code
