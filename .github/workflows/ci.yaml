@@ -30,3 +30,17 @@ jobs:
         run: npm ci
       - name: Unit-test
         run: npm run test
+
+  build:
+    name: Build
+    runs-on: ubuntu-letest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - name: Install packages
+        run: npm ci
+      - name: Build web-app
+        run: npm run build
