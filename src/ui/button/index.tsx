@@ -1,6 +1,6 @@
 // Core
 import React, {
-  FC, MouseEvent, ReactNode, ButtonHTMLAttributes, DetailedHTMLProps,
+  FC, ButtonHTMLAttributes, DetailedHTMLProps,
 } from 'react';
 
 // Styles
