@@ -16,6 +16,8 @@ const ListPassword: FC = observer(() => {
     return null;
   }
 
+  const onClickCopyText = (text: string) => () => navigator.clipboard.writeText(text);
+
   return (
     <ul className={classes.list}>
       {password.passwords.map((p) => (
@@ -25,7 +27,7 @@ const ListPassword: FC = observer(() => {
             <button
               type="button"
               className={classes.button}
-              onClick={() => navigator.clipboard.writeText(p)}
+              onClick={onClickCopyText(p)}
             >
               <CopyIcon />
               Click to copy

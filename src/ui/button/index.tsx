@@ -1,5 +1,7 @@
 // Core
-import React, { FC, MouseEvent, ReactNode } from 'react';
+import React, {
+  FC, MouseEvent, ReactNode, ButtonHTMLAttributes, DetailedHTMLProps,
+} from 'react';
 
 // Styles
 import * as classes from './button.module.css';
@@ -8,21 +10,20 @@ import * as classes from './button.module.css';
 import { clsx } from '../../utils';
 
 // Types
-type ButtonPropsType = {
-  className?: string;
+type DefaultProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+
+type ButtonPropsType = DefaultProps & {
   description?: string;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-  children: ReactNode;
-};
+}
 
 const Button: FC<ButtonPropsType> = ({
   className,
   description,
-  onClick,
   children,
+  ...props
 }) => (
   <div className={clsx(classes.container, className)}>
-    <button type="button" className={classes.button} onClick={onClick}>
+    <button className={classes.button} {...props}>
       {children}
     </button>
     {description && <span className={classes.description}>{description}</span>}

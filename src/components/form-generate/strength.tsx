@@ -14,11 +14,11 @@ const MARKS = ['Bad', 'Low', 'Medium', 'High'];
 
 const Strength: FC = observer(() => (
   <Range
-    value={password.strength}
+    value={password.complexity}
     min={MIN_RANGE}
     max={MAX_RANGE}
     marks={MARKS}
-    onChange={(value) => password.setStrength(value)}
+    onChange={(value) => password.setComplexity(value)}
   />
 ));
 

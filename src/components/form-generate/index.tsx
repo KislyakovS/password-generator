@@ -1,5 +1,5 @@
 // Core
-import React, { FC, FormEvent, useCallback } from 'react';
+import React, { FC, FormEvent } from 'react';
 import { observer } from 'mobx-react-lite';
 
 // Components
@@ -15,14 +15,11 @@ import { password } from '../../store/password';
 import * as classes from './form-generate.module.css';
 
 const FormGenerate: FC = observer(() => {
-  const onSubmit = useCallback(
-    (event: FormEvent) => {
-      event.preventDefault();
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
 
-      password.generate();
-    },
-    [password],
-  );
+    password.generate();
+  };
 
   return (
     <form className={classes.form} onSubmit={onSubmit}>
@@ -33,7 +30,7 @@ const FormGenerate: FC = observer(() => {
         <Checkboxes className={classes.checkboxes} />
         <Length />
       </Fieldset>
-      <Button className={classes.submit} description="Or press ↩︎ ENTER">
+      <Button type="submit" className={classes.submit} description="Or press ↩︎ ENTER">
         Generate
       </Button>
     </form>
