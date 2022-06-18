@@ -1,10 +1,10 @@
-const hasServiceWorker = "serviceWorker" in navigator;
+const hasServiceWorker = 'serviceWorker' in navigator;
 
 export const register = () => {
   if (hasServiceWorker) {
     navigator.serviceWorker.register(
-      new URL("service-worker.ts", import.meta.url),
-      { type: "module" }
+      new URL('service-worker.ts', import.meta.url),
+      { type: 'module' },
     );
   }
 };
@@ -12,10 +12,10 @@ export const register = () => {
 export const unregister = async () => {
   if (hasServiceWorker) {
     navigator.serviceWorker.ready
-      .then(registration => {
+      .then((registration) => {
         registration.unregister();
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error.message);
       });
   }

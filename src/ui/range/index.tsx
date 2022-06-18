@@ -1,11 +1,11 @@
 // Core
-import React, { FC } from "react";
-import { Range as Input } from "react-range";
+import React, { FC } from 'react';
+import { Range as Input } from 'react-range';
 
 // Components
-import { track } from "./track";
-import { Thumb } from "./thumb";
-import { mark } from "./mark";
+import { track } from './track';
+import { Thumb } from './thumb';
+import { mark } from './mark';
 
 // Utils
 import { clsx } from '../../utils';
@@ -28,22 +28,20 @@ const Range: FC<RangeType> = ({
   max,
   value,
   marks,
-  onChange
-}: RangeType) => {
-  return (
-    <div className={clsx(className)}>
-      <Input
-        values={[value]}
-        step={step}
-        min={min}
-        max={max}
-        onChange={([value]) => onChange(value)}
-        renderTrack={track(min, max, value)}
-        renderMark={marks ? mark(marks, value, step) : undefined}
-        renderThumb={Thumb}
-      />
-    </div>
-  );
-};
+  onChange,
+}: RangeType) => (
+  <div className={clsx(className)}>
+    <Input
+      values={[value]}
+      step={step}
+      min={min}
+      max={max}
+      onChange={([value]) => onChange(value)}
+      renderTrack={track(min, max, value)}
+      renderMark={marks ? mark(marks, value, step) : undefined}
+      renderThumb={Thumb}
+    />
+  </div>
+);
 
 export { Range };

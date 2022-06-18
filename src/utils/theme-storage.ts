@@ -1,4 +1,4 @@
-import { Storage } from "./storage";
+import { Storage } from './storage';
 
 enum Theme {
   dark = 'dark',
@@ -15,4 +15,4 @@ class ThemeStorage extends Storage<'theme', Theme> {
   }
 }
 
-export { Theme, ThemeStorage }
+export { Theme, ThemeStorage };

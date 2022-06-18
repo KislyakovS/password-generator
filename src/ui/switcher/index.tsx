@@ -3,14 +3,14 @@ import React, {
   FC,
   useMemo,
   DetailedHTMLProps,
-  InputHTMLAttributes
-} from "react";
+  InputHTMLAttributes,
+} from 'react';
 
 // Styles
-import * as classes from "./switcher.module.css";
+import * as classes from './switcher.module.css';
 
 // Utils
-import { randomNumber } from '../../utils';
+import { randomNumber, clsx } from '../../utils';
 
 // Types
 type SwitcherPropsType = DetailedHTMLProps<
@@ -24,7 +24,7 @@ const Switcher: FC<SwitcherPropsType> = ({ className, children, ...props }) => {
   return (
     <>
       <input id={id} type="checkbox" className={classes.input} {...props} />
-      <label className={classes.switcher} htmlFor={id}>
+      <label className={clsx(classes.switcher, className)} htmlFor={id}>
         <div className={classes.track}>
           <span className={classes.thumb} />
         </div>

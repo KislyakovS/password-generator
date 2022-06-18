@@ -3,14 +3,14 @@ import React, {
   FC,
   DetailedHTMLProps,
   InputHTMLAttributes,
-  ReactNode
-} from "react";
+  ReactNode,
+} from 'react';
 
 // Icons
-import CheckIcon from "./icons/check.svg";
+import CheckIcon from './icons/check.svg';
 
 // Styles
-import * as classes from "./checkbox.module.css";
+import * as classes from './checkbox.module.css';
 
 // Utils
 import { clsx } from '../../utils';

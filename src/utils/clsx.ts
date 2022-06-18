@@ -7,23 +7,23 @@ type ClassObject = {
 const clsx = (...args: ClassValue[]): string => {
   const classes: Set<string> = new Set();
 
-  args.forEach(arg => {
+  args.forEach((arg) => {
     if (!arg || typeof arg === 'boolean') {
       return;
     }
 
     if (Array.isArray(arg)) {
-      classes.add(clsx(...arg))
+      classes.add(clsx(...arg));
     } else if (typeof arg === 'object') {
-      for (let key in arg) {
+      Object.keys(arg).forEach((key) => {
         if (arg[key]) {
           classes.add(key);
         }
-      }
+      });
     } else {
-      classes.add(`${arg}`)
+      classes.add(`${arg}`);
     }
-  })
+  });
 
   return Array.from(classes).join(' ');
 };

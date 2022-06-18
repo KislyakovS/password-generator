@@ -1,8 +1,8 @@
 // Core
-import React, { FC, memo } from "react";
+import React, { FC, memo } from 'react';
 
 // Styles
-import * as classes from "./logo.module.css";
+import * as classes from './logo.module.css';
 
 const Logo: FC = memo(
   () => (
@@ -12,7 +12,7 @@ const Logo: FC = memo(
       <span className={classes.slogan}>Simple password generator</span>
     </h1>
   ),
-  () => true
+  () => true,
 );
 
 export { Logo };

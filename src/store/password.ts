@@ -1,8 +1,8 @@
 // Core
-import { makeAutoObservable } from "mobx";
-import { defaultOptions, PasswordGenerator } from "../utils";
+import { makeAutoObservable } from 'mobx';
+import { defaultOptions, PasswordGenerator } from '../utils';
 
-enum Strength {
+enum Complexity {
   bad = 1,
   low,
   medium,
@@ -16,7 +16,7 @@ const presets = [
     isLowercase: true,
     isSymbol: false,
     isNumber: false,
-    isStrict: false
+    isStrict: false,
   },
   {
     length: 8,
@@ -24,7 +24,7 @@ const presets = [
     isLowercase: true,
     isSymbol: false,
     isNumber: false,
-    isStrict: false
+    isStrict: false,
   },
   {
     length: 12,
@@ -32,7 +32,7 @@ const presets = [
     isLowercase: true,
     isSymbol: true,
     isNumber: true,
-    isStrict: true
+    isStrict: true,
   },
   {
     length: 16,
@@ -40,15 +40,17 @@ const presets = [
     isLowercase: true,
     isSymbol: true,
     isNumber: true,
-    isStrict: true
-  }
+    isStrict: true,
+  },
 ];
 
 const passwordGenerator = new PasswordGenerator();
 
 class Password {
-  strength: Strength = Strength.medium;
+  complexity: Complexity = Complexity.medium;
+
   customize = { ...defaultOptions };
+
   passwords: string[] = [];
 
   constructor() {
@@ -79,9 +81,9 @@ class Password {
     this.customize.isSymbol = value;
   }
 
-  setStrength(value: Strength) {
+  setComplexity(value: Complexity) {
     this.customize = { ...presets[value - 1] };
-    this.strength = value;
+    this.complexity = value;
   }
 
   generate() {

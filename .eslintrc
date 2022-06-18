@@ -3,9 +3,6 @@
     "airbnb",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": [
-    "@emotion"
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -15,8 +12,14 @@
     }
   },
   "rules": {
+    "no-shadow": 0,
     "no-plusplus": 0,
+    "jsx-a11y/label-has-associated-control": 0,
     "react/function-component-definition": 0,
+    "react/require-default-props": 0,
+    "react/prop-types": 0,
+    "react/button-has-type": 0,
+    "react/jsx-props-no-spreading": 0,
     "react/jsx-filename-extension": [
       2,
       {
@@ -28,6 +31,7 @@
     "no-use-before-define": 0,
     "react/react-in-jsx-scope": 0,
     "import/prefer-default-export": 0,
+    "import/no-unresolved": 0,
     "import/extensions": [
       1,
       "ignorePackages",
