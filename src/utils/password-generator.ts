@@ -1,6 +1,7 @@
 import { randomNumber } from './random-number';
 
 import { OptionsType } from '../@types/options';
+import { Password } from '../@types/password';
 
 type StrictRuleType = {
   name: keyof OptionsType;
@@ -68,7 +69,7 @@ class PasswordGenerator {
     return pool;
   }
 
-  private checkingStrict(password: string): boolean {
+  private checkingStrict(password: Password): boolean {
     const isStrict = strictRules.every((rule) => {
       const { name, regex } = rule;
 
@@ -89,7 +90,7 @@ class PasswordGenerator {
     };
   }
 
-  public generate(): string {
+  public generate(): Password {
     const { length, isStrict } = this.options;
 
     if (!length) {
@@ -110,7 +111,7 @@ class PasswordGenerator {
     return password;
   }
 
-  public generateMultiple(count = 5): string[] {
+  public generateMultiple(count = 5): Password[] {
     const passwords: string[] = [];
 
     for (let _ = 0; _ < count; _++) {
