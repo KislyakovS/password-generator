@@ -1,6 +1,5 @@
 // Core
 import React, { FC, FormEvent } from 'react';
-import { observer } from 'mobx-react-lite';
 
 // Components
 import { Fieldset, Button } from '../../ui';
@@ -9,16 +8,16 @@ import { Checkboxes } from './checkboxes';
 import { Strength } from './strength';
 
 // State
-import { password } from '../../store/password';
+import { generatePasswords } from '../../bus/passwords';
 
 // Styles
 import * as classes from './form-generate.module.css';
 
-const FormGenerate: FC = observer(() => {
+const FormGenerate: FC = () => {
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
 
-    password.generate();
+    generatePasswords();
   };
 
   return (
@@ -35,6 +34,6 @@ const FormGenerate: FC = observer(() => {
       </Button>
     </form>
   );
-});
+};
 
 export { FormGenerate };
