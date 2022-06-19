@@ -1,12 +1,8 @@
-// Core
 import React, { FC, ReactNode } from 'react';
 import { getTrackBackground } from 'react-range';
 
-// Instruments
 import { ITrackProps } from 'react-range/lib/types';
 import * as classes from './track.module.css';
-
-// Types
 
 type TrackType = {
   props: ITrackProps;

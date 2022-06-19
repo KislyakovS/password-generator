@@ -1,22 +1,16 @@
-// Core
 import React, { FC, ChangeEvent, useCallback } from 'react';
 import { useStore } from 'effector-react';
 
-// Components
 import { Checkbox } from '../../ui';
 
-// State
 import {
   $options, setIsUppercase, setIsLowercase, setIsNumber, setIsSymbol,
 } from '../../bus/options';
 
-// Styles
 import * as classes from './checkboxes.module.css';
 
-// Utils
 import { clsx } from '../../utils';
 
-// Types
 type CheckboxesPropsType = {
   className?: string;
 };

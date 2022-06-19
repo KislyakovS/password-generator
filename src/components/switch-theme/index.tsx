@@ -1,17 +1,12 @@
-// Core
 import React, { FC } from 'react';
 
-// Components
 import { Switcher } from '../../ui';
 
-// Assets
 import MoonIcon from './icons/moon.svg';
 import SunIcon from './icons/sun.svg';
 
-// Hooks
 import { useSwitchTheme } from '../../hooks';
 
-// Styles
 import * as classes from './switch-theme.module.css';
 
 const SwitchTheme: FC = () => {

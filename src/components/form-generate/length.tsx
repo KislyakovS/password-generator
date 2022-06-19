@@ -1,14 +1,10 @@
-// Core
 import React, { FC, useCallback, ChangeEvent } from 'react';
 import { useStore } from 'effector-react';
 
-// Components
 import { Range, Input } from '../../ui';
 
-// State
 import { $options, setLength } from '../../bus/options';
 
-// Styles
 import * as classes from './length.module.css';
 
 const MIN_RANGE = 1;
@@ -25,7 +21,7 @@ const Length: FC = () => {
     <div className={classes.length}>
       <Range
         className={classes.range}
-        value={length!}
+        value={length}
         min={MIN_RANGE}
         max={MAX_RANGE}
         onChange={setLength}
@@ -34,7 +30,7 @@ const Length: FC = () => {
         className={classes.input}
         label="Password length"
         isHiddenLabel
-        value={length!}
+        value={length}
         onChange={onChangeInput}
       />
     </div>

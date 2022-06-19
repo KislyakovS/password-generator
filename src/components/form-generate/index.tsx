@@ -1,16 +1,12 @@
-// Core
 import React, { FC, FormEvent } from 'react';
 
-// Components
 import { Fieldset, Button } from '../../ui';
 import { Length } from './length';
 import { Checkboxes } from './checkboxes';
 import { Strength } from './strength';
 
-// State
 import { generatePasswords } from '../../bus/passwords';
 
-// Styles
 import * as classes from './form-generate.module.css';
 
 const FormGenerate: FC = () => {

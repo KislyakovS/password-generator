@@ -1,16 +1,9 @@
 import { randomNumber } from './random-number';
 
-export type OptionsType = {
-  [key: string]: boolean | number | undefined;
-  length?: number;
-  isNumber?: boolean;
-  isSymbol?: boolean;
-  isUppercase?: boolean;
-  isLowercase?: boolean;
-};
+import { OptionsType } from '../@types/options';
 
 type StrictRuleType = {
-  name: string;
+  name: keyof OptionsType;
   regex: RegExp;
 };
 
@@ -89,7 +82,7 @@ class PasswordGenerator {
     return isStrict;
   }
 
-  public setup(options: OptionsType) {
+  public setup(options: Partial<OptionsType>) {
     this.options = {
       ...this.options,
       ...options,

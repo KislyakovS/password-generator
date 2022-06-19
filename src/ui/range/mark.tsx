@@ -1,14 +1,9 @@
-// Core
 import React, { FC } from 'react';
 
-// Styles
 import { IMarkProps } from 'react-range/lib/types';
 import * as classes from './mark.module.css';
 
-// Utils
 import { clsx } from '../../utils';
-
-// Types
 
 type MarkPropsType = {
   props: IMarkProps;

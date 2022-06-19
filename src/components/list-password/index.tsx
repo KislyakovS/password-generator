@@ -1,14 +1,10 @@
-// Core
 import React, { FC } from 'react';
 import { useList } from 'effector-react';
 
-// Assets
 import CopyIcon from './icons/copy.svg';
 
-// State
 import { $passwords } from '../../bus/passwords';
 
-// Styles
 import * as classes from './list-password.module.css';
 
 const ListPassword: FC = () => {

@@ -1,4 +1,3 @@
-// Core
 import React, {
   FC,
   useMemo,
@@ -6,13 +5,10 @@ import React, {
   InputHTMLAttributes,
 } from 'react';
 
-// Styles
 import * as classes from './switcher.module.css';
 
-// Utils
 import { randomNumber, clsx } from '../../utils';
 
-// Types
 type SwitcherPropsType = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
