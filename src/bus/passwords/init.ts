@@ -3,7 +3,7 @@ import { sample } from 'effector';
 import { $options } from '../options';
 import { $passwords, generatePasswords } from '.';
 
-import { PasswordGenerator } from '../../utils/password-generator';
+import { PasswordGenerator } from '../../utils';
 
 sample({
   clock: generatePasswords,

@@ -1,12 +1,9 @@
-// Core
 import React, { FC } from 'react';
 import { useStore } from 'effector-react';
 
-// Components
 import { Range } from '../../ui';
 
-// State
-import { $complexity, setComplexity } from '../../bus/options';
+import { $complexity, setComplexity } from '../../bus/complexity';
 
 const MIN_RANGE = 1;
 const MAX_RANGE = 4;
