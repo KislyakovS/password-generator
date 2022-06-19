@@ -1,4 +1,4 @@
-import { Theme, ThemeStorage } from "../../src/utils";
+import { Theme, ThemeStorage } from '../../src/utils';
 
 describe('ThemeStorage', () => {
   let themeStorage = new ThemeStorage();

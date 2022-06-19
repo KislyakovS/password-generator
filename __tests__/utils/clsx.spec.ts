@@ -1,4 +1,4 @@
-import { clsx } from "../../src/utils";
+import { clsx } from '../../src/utils';
 
 describe('Clsx', () => {
   it('handles strings and undefined values', () => {
@@ -14,7 +14,9 @@ describe('Clsx', () => {
   });
 
   it('handles object', () => {
-    const classes = clsx({ a: true, b: true, c: true, d: false });
+    const classes = clsx({
+      a: true, b: true, c: true, d: false,
+    });
 
     expect(classes).toBe('a b c');
   });
@@ -23,5 +25,5 @@ describe('Clsx', () => {
     const classes = clsx(['a', ['b', ['c', { d: true }]]]);
 
     expect(classes).toBe('a b c d');
-  })
+  });
 });
