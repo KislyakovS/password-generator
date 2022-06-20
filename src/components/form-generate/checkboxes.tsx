@@ -1,55 +1,59 @@
-// Core
-import React, { FC } from 'react';
-import { observer } from 'mobx-react-lite';
+import React, { FC, ChangeEvent, useCallback } from 'react';
+import { useStore } from 'effector-react';
 
-// Components
 import { Checkbox } from '../../ui';
 
-// State
-import { password } from '../../store/password';
+import {
+  $options, setIsUppercase, setIsLowercase, setIsNumber, setIsSymbol,
+} from '../../bus/options';
 
-// Styles
 import * as classes from './checkboxes.module.css';
 
-// Utils
 import { clsx } from '../../utils';
 
-// Types
 type CheckboxesPropsType = {
   className?: string;
 };
 
-const Checkboxes: FC<CheckboxesPropsType> = observer(({ className }) => (
-  <div className={clsx(classes.checkboxes, className)}>
-    <Checkbox
-      name="uppercase"
-      checked={password.customize.isUppercase}
-      onChange={(event) => password.setIsUppercase(event.target.checked)}
-    >
-      Uppercase
-    </Checkbox>
-    <Checkbox
-      name="lowercase"
-      checked={password.customize.isLowercase}
-      onChange={(event) => password.setIsLowercase(event.target.checked)}
-    >
-      Lowercase
-    </Checkbox>
-    <Checkbox
-      name="numbers"
-      checked={password.customize.isNumber}
-      onChange={(event) => password.setIsNumber(event.target.checked)}
-    >
-      Numbers
-    </Checkbox>
-    <Checkbox
-      name="symbols"
-      checked={password.customize.isSymbol}
-      onChange={(event) => password.setIsSymbol(event.target.checked)}
-    >
-      Symbols
-    </Checkbox>
-  </div>
-));
+const Checkboxes: FC<CheckboxesPropsType> = ({ className }) => {
+  const options = useStore($options);
+
+  const onChangeCheck = useCallback((fn) => (event: ChangeEvent<HTMLInputElement>) => {
+    fn(event.target.checked);
+  }, []);
+
+  return (
+    <div className={clsx(classes.checkboxes, className)}>
+      <Checkbox
+        name="uppercase"
+        checked={options.isUppercase}
+        onChange={onChangeCheck(setIsUppercase)}
+      >
+        Uppercase
+      </Checkbox>
+      <Checkbox
+        name="lowercase"
+        checked={options.isLowercase}
+        onChange={onChangeCheck(setIsLowercase)}
+      >
+        Lowercase
+      </Checkbox>
+      <Checkbox
+        name="numbers"
+        checked={options.isNumber}
+        onChange={onChangeCheck(setIsNumber)}
+      >
+        Numbers
+      </Checkbox>
+      <Checkbox
+        name="symbols"
+        checked={options.isSymbol}
+        onChange={onChangeCheck(setIsSymbol)}
+      >
+        Symbols
+      </Checkbox>
+    </div>
+  );
+};
 
 export { Checkboxes };

@@ -1,13 +1,9 @@
-// Core
 import React, { FC, DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
-// Styles
 import * as classes from './input.module.css';
 
-// Utils
 import { clsx } from '../../utils';
 
-// Types
 type DefaultElement = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement

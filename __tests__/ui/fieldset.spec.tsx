@@ -1,8 +1,6 @@
-// Core
 import React from 'react';
 import { render } from '@testing-library/react';
 
-// Components
 import { Fieldset } from '../../src/ui';
 
 describe('Component Fieldset', () => {

@@ -1,7 +1,5 @@
-// Core
 import React, { FC, memo } from 'react';
 
-// Styles
 import * as classes from './logo.module.css';
 
 const Logo: FC = memo(

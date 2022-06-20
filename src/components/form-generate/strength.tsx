@@ -1,25 +1,26 @@
-// Core
 import React, { FC } from 'react';
-import { observer } from 'mobx-react-lite';
+import { useStore } from 'effector-react';
 
-// Components
 import { Range } from '../../ui';
 
-// State
-import { password } from '../../store/password';
+import { $complexity, setComplexity } from '../../bus/complexity';
 
 const MIN_RANGE = 1;
 const MAX_RANGE = 4;
 const MARKS = ['Bad', 'Low', 'Medium', 'High'];
 
-const Strength: FC = observer(() => (
-  <Range
-    value={password.complexity}
-    min={MIN_RANGE}
-    max={MAX_RANGE}
-    marks={MARKS}
-    onChange={(value) => password.setComplexity(value)}
-  />
-));
+const Strength: FC = () => {
+  const complexity = useStore($complexity);
+
+  return (
+    <Range
+      value={complexity as number}
+      min={MIN_RANGE}
+      max={MAX_RANGE}
+      marks={MARKS}
+      onChange={setComplexity}
+    />
+  );
+};
 
 export { Strength };

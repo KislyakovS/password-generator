@@ -1,4 +1,3 @@
-// Core
 import React, {
   FC,
   DetailedHTMLProps,
@@ -6,16 +5,12 @@ import React, {
   ReactNode,
 } from 'react';
 
-// Icons
 import CheckIcon from './icons/check.svg';
 
-// Styles
 import * as classes from './checkbox.module.css';
 
-// Utils
 import { clsx } from '../../utils';
 
-// Types
 type DefaultElement = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement

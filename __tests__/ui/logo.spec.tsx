@@ -1,8 +1,6 @@
-// Core
 import React from 'react';
 import { render } from '@testing-library/react';
 
-// Components
 import { Logo } from '../../src/ui';
 
 describe('Component Logo', () => {
@@ -18,4 +16,3 @@ describe('Component Logo', () => {
     expect(description).toBeInTheDocument();
   });
 });
-

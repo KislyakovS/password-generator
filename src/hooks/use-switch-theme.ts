@@ -1,4 +1,3 @@
-// Core
 import {
   useState, useCallback, useEffect, ChangeEvent,
 } from 'react';

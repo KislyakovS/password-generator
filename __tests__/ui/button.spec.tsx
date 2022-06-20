@@ -1,8 +1,6 @@
-// Core
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-// Components
 import { Button } from '../../src/ui';
 
 describe('Component Button', () => {
@@ -24,6 +22,5 @@ describe('Component Button', () => {
     fireEvent.click(button);
 
     expect(onClick).toHaveBeenCalled();
-  })
+  });
 });
-

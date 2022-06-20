@@ -1,10 +1,7 @@
-// Core
 import React, { FC, ReactNode } from 'react';
 
-// Styles
 import * as classes from './fieldset.module.css';
 
-// Types
 type FieldsetPropsType = {
   legend: string;
   description?: string;

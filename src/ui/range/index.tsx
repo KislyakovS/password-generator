@@ -1,16 +1,12 @@
-// Core
 import React, { FC } from 'react';
 import { Range as Input } from 'react-range';
 
-// Components
 import { track } from './track';
 import { Thumb } from './thumb';
 import { mark } from './mark';
 
-// Utils
 import { clsx } from '../../utils';
 
-// Types
 export type RangeType = {
   className?: string;
   value: number;

@@ -1,15 +1,11 @@
-// Core
 import React, {
   FC, ButtonHTMLAttributes, DetailedHTMLProps,
 } from 'react';
 
-// Styles
-import * as classes from './button.module.css';
-
-// Utils
 import { clsx } from '../../utils';
 
-// Types
+import * as classes from './button.module.css';
+
 type DefaultProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
 type ButtonPropsType = DefaultProps & {
