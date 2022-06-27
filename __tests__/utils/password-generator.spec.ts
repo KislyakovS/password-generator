@@ -86,5 +86,5 @@ describe('When using the password generator, it:', () => {
     const passwords = password.generateMultiple(COUNT_PASSWORD);
 
     expect(passwords).toHaveLength(COUNT_PASSWORD);
-  })
+  });
 });
