@@ -1,11 +1,11 @@
 type ClassValue = number | string | boolean | ClassArray | ClassObject | null | undefined;
 type ClassArray = Array<ClassValue>
-type ClassObject = {
+interface ClassObject {
   [key: string]: boolean;
 }
 
 const clsx = (...args: ClassValue[]): string => {
-  const classes: Set<string> = new Set();
+  const classes = new Set<string>()
 
   args.forEach((arg) => {
     if (!arg || typeof arg === 'boolean') {
