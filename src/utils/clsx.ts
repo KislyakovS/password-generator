@@ -5,7 +5,7 @@ interface ClassObject {
 }
 
 const clsx = (...args: ClassValue[]): string => {
-  const classes = new Set<string>()
+  const classes = new Set<string>();
 
   args.forEach((arg) => {
     if (!arg || typeof arg === 'boolean') {
