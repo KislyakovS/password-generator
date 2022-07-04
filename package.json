@@ -9,7 +9,12 @@
     "build": "parcel build",
     "test": "jest",
     "lint": "eslint './src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix"
+    "lint:fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "loki:init": "loki init",
+    "loki:test": "loki test",
+    "loki:update": "loki update"
   },
   "keywords": [
     "password",
@@ -28,24 +33,54 @@
     "workbox-strategies": "^6.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.6",
     "@babel/preset-typescript": "^7.16.0",
     "@parcel/cache": "^2.0.1",
     "@parcel/packager-raw-url": "^2.6.1",
     "@parcel/transformer-svg-react": "^2.0.1",
     "@parcel/transformer-webmanifest": "^2.6.1",
     "@parcel/workers": "^2.0.1",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-interactions": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack4": "^6.5.9",
+    "@storybook/manager-webpack4": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@types/jest": "^27.0.2",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "babel-loader": "^8.2.5",
     "eslint-config-airbnb": "^19.0.0",
     "husky": "^8.0.1",
     "jest": "^27.3.1",
+    "loki": "^0.30.3",
     "parcel": "^2.6.1",
     "process": "^0.11.10",
+    "storybook-addon-themes": "^6.1.0",
+    "storybook-css-modules": "^1.0.8",
+    "storybook-svgr-react-component": "^1.0.1",
     "ts-jest": "^27.0.7",
-    "typescript": "^4.6.3"
+    "typescript": "^4.6.3",
+    "url-loader": "^4.1.1"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.app",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "chrome.iphone7": {
+        "target": "chrome.app",
+        "preset": "iPhone 7"
+      }
+    }
   }
 }
