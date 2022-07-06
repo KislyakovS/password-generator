@@ -59,4 +59,4 @@ jobs:
       - name: Build Storybook
         run: npm run storybook:build
       - name: Run loki test
-        run: loki --requireReference --reactUri file:./storybook-static
+        run: npm run loki:ci

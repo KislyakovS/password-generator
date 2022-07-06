@@ -13,7 +13,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "loki:test": "loki test",
-    "loki:update": "loki update"
+    "loki:update": "loki update",
+    "loki:ci": "loki --requireReference --reactUri file:./storybook-static"
   },
   "keywords": [
     "password",
