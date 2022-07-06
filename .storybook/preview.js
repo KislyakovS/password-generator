@@ -7,10 +7,10 @@ export const parameters = {
     },
   },
   themes: {
-    default: 'Dark',
+    clearable: false,
     list: [
       { name: 'Dark', class: 'dark', color: '#191d24' },
-      { name: 'Light', class: 'light', color: '#f6f8fa' }
+      { name: 'Light', class: 'light', color: '#f6f8fa', default: true }
     ],
   },
 }
