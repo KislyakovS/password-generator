@@ -1,26 +1,27 @@
 import { Theme, ThemeStorage } from '../../src/utils';
 
 describe('ThemeStorage', () => {
-  let themeStorage = new ThemeStorage();
+  let sut: ThemeStorage;
+
+  const mockStorageSetItem = jest.fn();
+  const mockStorageGetItem = jest.fn();
 
   beforeEach(() => {
-    themeStorage = new ThemeStorage();
+    sut = new ThemeStorage();
 
-    global.Storage.prototype.setItem = jest.fn();
-    global.Storage.prototype.getItem = jest.fn();
+    global.Storage.prototype.setItem = mockStorageSetItem;
+    global.Storage.prototype.getItem = mockStorageGetItem;
   });
 
   it('should call the write method in localStorage', () => {
-    global.Storage.prototype.setItem = jest.fn();
+    sut.setTheme(Theme.dark);
 
-    themeStorage.setTheme(Theme.dark);
-    expect(global.Storage.prototype.setItem).toHaveBeenCalled();
+    expect(mockStorageSetItem).toHaveBeenCalled();
   });
 
   it('should call the read method from localStorage', () => {
-    global.Storage.prototype.getItem = jest.fn();
+    sut.getTheme();
 
-    themeStorage.getTheme();
-    expect(global.Storage.prototype.getItem).toHaveBeenCalled();
+    expect(mockStorageGetItem).toHaveBeenCalled();
   });
 });
