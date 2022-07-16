@@ -5,13 +5,15 @@ enum Theme {
   light = 'light',
 }
 
-class ThemeStorage extends Storage<'theme', Theme> {
+const KEY_THEME_STORAGE = 'theme';
+
+class ThemeStorage extends Storage<typeof KEY_THEME_STORAGE, Theme> {
   getTheme() {
-    return this.get('theme');
+    return this.get(KEY_THEME_STORAGE);
   }
 
   setTheme(value: Theme) {
-    this.set('theme', value);
+    this.set(KEY_THEME_STORAGE, value);
   }
 }
 
