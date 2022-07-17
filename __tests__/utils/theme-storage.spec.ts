@@ -1,6 +1,7 @@
 import { Theme, ThemeStorage } from '../../src/utils';
 
 describe('ThemeStorage', () => {
+  const KEY_THEME_STORAGE = 'theme';
   let sut: ThemeStorage;
 
   const mockStorageSetItem = jest.fn();
@@ -13,15 +14,15 @@ describe('ThemeStorage', () => {
     global.Storage.prototype.getItem = mockStorageGetItem;
   });
 
-  it('should call the write method in localStorage', () => {
+  it('add a dark theme to localStorage', () => {
     sut.setTheme(Theme.dark);
 
-    expect(mockStorageSetItem).toHaveBeenCalled();
+    expect(mockStorageSetItem).toHaveBeenCalledWith(KEY_THEME_STORAGE, JSON.stringify(Theme.dark));
   });
 
-  it('should call the read method from localStorage', () => {
+  it('get from localStorage theme', () => {
     sut.getTheme();
 
-    expect(mockStorageGetItem).toHaveBeenCalled();
+    expect(mockStorageGetItem).toHaveBeenCalledWith(KEY_THEME_STORAGE);
   });
 });
