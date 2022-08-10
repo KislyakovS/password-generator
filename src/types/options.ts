@@ -1,4 +1,4 @@
-export type OptionsType = {
+export type Options = {
     length: number;
     isNumber: boolean;
     isSymbol: boolean;

@@ -1,6 +1,6 @@
 import { createDomain } from 'effector';
 
-import { Password } from '../../@types/password';
+import { Password } from '../../types/password';
 
 const domain = createDomain('passwords');
 

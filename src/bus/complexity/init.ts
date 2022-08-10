@@ -3,9 +3,9 @@ import { sample } from 'effector';
 import { $complexity, setComplexity } from '.';
 import { $options } from '../options';
 
-import { OptionsType } from '../../@types/options';
+import { Options } from '../../types/options';
 
-const presets: OptionsType[] = [
+const presets: Options[] = [
   {
     length: 6,
     isUppercase: true,

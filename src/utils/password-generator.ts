@@ -1,14 +1,14 @@
 import { randomNumber } from './random-number';
 
-import { OptionsType } from '../@types/options';
-import { Password } from '../@types/password';
+import { Options } from '../types/options';
+import { Password } from '../types/password';
 
 type StrictRuleType = {
-  name: keyof OptionsType;
+  name: keyof Options;
   regex: RegExp;
 };
 
-const defaultOptions: OptionsType = Object.freeze({
+const defaultOptions: Options = Object.freeze({
   length: 12,
   isNumber: true,
   isSymbol: true,
@@ -32,9 +32,9 @@ const strictRules: StrictRuleType[] = [
 ];
 
 class PasswordGenerator {
-  private options: OptionsType;
+  private options: Options;
 
-  constructor(options: OptionsType = defaultOptions) {
+  constructor(options: Options = defaultOptions) {
     this.options = options;
   }
 
@@ -83,7 +83,7 @@ class PasswordGenerator {
     return isStrict;
   }
 
-  public setup(options: Partial<OptionsType>) {
+  public setup(options: Partial<Options>) {
     this.options = {
       ...this.options,
       ...options,

@@ -2,11 +2,11 @@ import { createDomain } from 'effector';
 
 import { defaultOptions } from '../../utils';
 
-import { OptionsType } from '../../@types/options';
+import { Options } from '../../types/options';
 
 const domain = createDomain('options');
 
-export const $options = domain.createStore<OptionsType>(defaultOptions);
+export const $options = domain.createStore<Options>(defaultOptions);
 
 export const setLength = domain.createEvent<number>();
 export const setIsUppercase = domain.createEvent<boolean>();
