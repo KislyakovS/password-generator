@@ -1,5 +1,6 @@
 import React, { FC, ChangeEvent, useCallback } from 'react';
 import { useStore } from 'effector-react';
+import { Event } from 'effector';
 
 import { Checkbox } from '../../ui';
 
@@ -18,7 +19,7 @@ type CheckboxesPropsType = {
 const Checkboxes: FC<CheckboxesPropsType> = ({ className }) => {
   const options = useStore($options);
 
-  const onChangeCheck = useCallback((fn) => (event: ChangeEvent<HTMLInputElement>) => {
+  const onChangeCheck = useCallback((fn: Event<boolean>) => (event: ChangeEvent<HTMLInputElement>) => {
     fn(event.target.checked);
   }, []);
 
