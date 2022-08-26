@@ -19,6 +19,7 @@ type CheckboxesPropsType = {
 const Checkboxes: FC<CheckboxesPropsType> = ({ className }) => {
   const options = useStore($options);
 
+  // eslint-disable-next-line max-len
   const onChangeCheck = useCallback((fn: Event<boolean>) => (event: ChangeEvent<HTMLInputElement>) => {
     fn(event.target.checked);
   }, []);

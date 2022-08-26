@@ -8,55 +8,67 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install packages
-        run: npm ci
+        run: pnpm install
       - name: Lint source code ESLint
-        run: npm run lint
+        run: pnpm lint
 
   test:
     name: Jest
     runs-on: ubuntu-letest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: npm
+          cache: 'pnpm'
       - name: Install packages
-        run: npm ci
+        run: pnpm install
       - name: Unit-test
-        run: npm run test
+        run: pnpm test
 
   build:
     name: Build
     runs-on: ubuntu-letest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install packages
-        run: npm ci
+        run: pnpm install
       - name: Build web-app
-        run: npm run build
+        run: pnpm build
 
   screenshots-test:
     name: Screenshots test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'npm'
+          cache: 'pnpm'
       - name: Install packages
-        run: npm ci
+        run: pnpm install
       - name: Build Storybook
-        run: npm run storybook:build
+        run: pnpm storybook:build
       - name: Run loki test
-        run: npm run loki:ci
+        run: pnpm loki:ci
