@@ -5,6 +5,7 @@
   "source": "src/index.html",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "start": "parcel",
     "build": "parcel build",
     "test": "jest",
