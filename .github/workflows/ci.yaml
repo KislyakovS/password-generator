@@ -67,7 +67,7 @@ jobs:
           node-version: 16
           cache: 'pnpm'
       - name: Install packages
-        run: pnpm ci
+        run: pnpm install
       - name: Build Storybook
         run: pnpm storybook:build
       - name: Run loki test
