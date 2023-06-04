@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { Range as Input } from 'react-range';
 
 import { track } from './track';
@@ -25,19 +25,26 @@ const Range: FC<RangeType> = ({
   value,
   marks,
   onChange,
-}: RangeType) => (
-  <div className={clsx(className)}>
-    <Input
-      values={[value]}
-      step={step}
-      min={min}
-      max={max}
-      onChange={([value]) => onChange(value)}
-      renderTrack={track(min, max, value)}
-      renderMark={marks ? mark(marks, value, step) : undefined}
-      renderThumb={Thumb}
-    />
-  </div>
-);
+}: RangeType) => {
+  const onChangeIpnut = useCallback(([value]: number[]) => {
+    window.navigator.vibrate(200);
+    onChange(value);
+  }, [onChange]);
+
+  return (
+    <div className={clsx(className)}>
+      <Input
+        values={[value]}
+        step={step}
+        min={min}
+        max={max}
+        onChange={onChangeIpnut}
+        renderTrack={track(min, max, value)}
+        renderMark={marks ? mark(marks, value, step) : undefined}
+        renderThumb={Thumb}
+      />
+    </div>
+  );
+};
 
 export { Range };
